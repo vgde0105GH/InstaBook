@@ -1,0 +1,32 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-image: url(https://images.unsplash.com/photo-1593959734793-6e92d102da1e?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YyVDMyVBOXUlMjBhenVsJTIwZXNjdXJvfGVufDB8fDB8fHww);
+    background-size: cover;
+    height: 100vh;
+    color: white;
+}
+.container{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sign-card{
+    width: 300px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 22px;
+    box-shadow: 0px 20px 60px rgb(0, 0, 0, 0.416);
+    backdrop-filter: blur(10px);
+}
+
+h2{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+. input-box{
+    
+}
