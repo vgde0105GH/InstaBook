@@ -1,105 +1,556 @@
-*{
+/* ========================================
+   RESET
+======================================== */
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Força que nenhuma imagem quebre o layout */
+
+/* ========================================
+   IMAGENS
+======================================== */
+
 img {
     max-width: 100%;
     height: auto;
     display: block;
 }
 
-*:focus{
+
+*:focus {
     outline: none;
 }
 
+
+/* ========================================
+   BODY
+======================================== */
+
 body {
-    background: #fff;
+    background: #f5f5f5;
+
     font-family: 'Roboto', sans-serif;
-    padding-top: 60px; /* Deixa o espaço para o menu fixo não cobrir o feed */
+
+    padding-top: 60px;
 }
 
-/* ESTRUTURA DA BARRA FIXA */
+
+/* ========================================
+   MENU PRINCIPAL
+======================================== */
+
 .menu-principal {
     position: fixed;
+
     top: 0;
     left: 0;
+
     width: 100%;
-    height: 60px; /* Aumentado levemente para acomodar melhor o logo do InstaBook */
-    background: #fff;
+    height: 60px;
+
+    background: linear-gradient(
+        90deg,
+        #fd5949,
+        #d6249f,
+        #285AEB
+    );
+
     border-bottom: 1px solid #dbdbdb;
+
     display: flex;
+
     justify-content: center;
     align-items: center;
+
     z-index: 1000;
 }
 
-/* CONTAINER DOS TRÊS BLOCOS PRINCIPAIS */
+
+/* ========================================
+   CONTAINER DO MENU
+======================================== */
+
 .menu-links {
     width: 95%;
-    max-width: 1000px;
+
+    max-width: 1100px;
+
     height: 100%;
+
     display: flex;
-    justify-content: space-between; /* Separa estritamente em: Esquerda, Centro e Direita */
+
+    justify-content: space-between;
+
     align-items: center;
 }
 
-/* 1. CONFIGURAÇÃO DO LOGOTIPO */
+
+/* ========================================
+   LOGOMARCA
+======================================== */
+
 .logomarca {
     height: 100%;
+
     display: flex;
+
     align-items: center;
 }
 
+
 .logomarca img {
-    height: 38px; /* Controla o tamanho do logo */
+    height: 38px;
+
     width: auto;
-    /* Se a sua imagem tiver fundo preto puro e você quiser torná-lo transparente, 
-       descomente a linha abaixo removendo as barras: */
-    /* mix-blend-mode: multiply; */
 }
 
-/* 2. CONFIGURAÇÃO DA BARRA DE PESQUISA */
+
+/* ========================================
+   BARRA DE PESQUISA
+======================================== */
+
 .busca-topo {
     width: 240px;
+
     height: 34px;
-    background: #efefef;
+
+    background: #ffffff;
+
     border: none;
+
     border-radius: 8px;
+
     padding: 0 15px;
+
     color: #262626;
+
     text-align: center;
 }
+
 
 .busca-topo::placeholder {
     color: #8e8e8e;
 }
 
-/* 3. CONFIGURAÇÃO DO GRUPO DE ÍCONES */
+
+/* ========================================
+   ÍCONES DO MENU
+======================================== */
+
 .menu-icones {
     display: flex;
+
     align-items: center;
-    gap: 18px; /* Dá um espaçamento padrão e idêntico entre cada ícone */
+
+    gap: 18px;
 }
 
+
 .icon {
-    height: 35px; /* Tamanho padrão de ícones do Instagram */
+    height: 35px;
+
     width: auto;
+
     cursor: pointer;
+
     transition: transform 0.2s;
 }
 
+
 .icon:hover {
-    transform: scale(1.1); /* Efeito sutil ao passar o mouse */
+    transform: scale(1.1);
 }
 
-/* Ajuste específico para a foto de perfil ficar redonda */
+
+/* ========================================
+   FOTO DE PERFIL
+======================================== */
+
 .perfil-usuario {
     width: 35px;
+
     height: 35px;
+
     border-radius: 50%;
+
     object-fit: cover;
+
     border: 1px solid #dbdbdb;
+}
+
+
+/* ========================================
+   CONTAINER DO FEED
+======================================== */
+
+.feed-container {
+    width: 100%;
+
+    max-width: 650px;
+
+    margin: 25px auto;
+
+    padding: 0 15px;
+}
+
+
+/* ========================================
+   CRIAR POST
+======================================== */
+
+.criar-post {
+    background: #ffffff;
+
+    border-radius: 8px;
+
+    padding: 15px;
+
+    margin-bottom: 20px;
+
+    box-shadow:
+        0 2px 6px rgba(0, 0, 0, 0.10);
+}
+
+
+.criar-post-info {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+
+.criar-post-info img {
+    width: 42px;
+
+    height: 42px;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+}
+
+
+.criar-post-info input {
+    flex: 1;
+
+    height: 42px;
+
+    border: none;
+
+    border-radius: 20px;
+
+    background: #f0f2f5;
+
+    padding: 0 18px;
+
+    font-size: 14px;
+
+    color: #555;
+
+    cursor: pointer;
+}
+
+
+.btn-criar-post {
+    width: 100%;
+
+    margin-top: 12px;
+
+    padding: 10px;
+
+    border: none;
+
+    border-radius: 6px;
+
+    background: linear-gradient(
+        90deg,
+        #833AB4,
+        #C13584,
+        #E1306C
+    );
+
+    color: white;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: opacity 0.2s;
+}
+
+
+.btn-criar-post:hover {
+    opacity: 0.85;
+}
+
+
+/* ========================================
+   POST
+======================================== */
+
+.post {
+    background: #ffffff;
+
+    border-radius: 8px;
+
+    margin-bottom: 20px;
+
+    padding: 20px;
+
+    box-shadow:
+        0 2px 6px rgba(0, 0, 0, 0.10);
+}
+
+
+/* ========================================
+   CABEÇALHO DO POST
+======================================== */
+
+.post-cabecalho {
+    display: flex;
+
+    align-items: center;
+
+    margin-bottom: 18px;
+}
+
+
+.post-perfil {
+    width: 45px;
+
+    height: 45px;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+    margin-right: 12px;
+}
+
+
+.post-usuario h3 {
+    font-size: 15px;
+
+    color: #262626;
+
+    margin-bottom: 3px;
+}
+
+
+.post-usuario span {
+    font-size: 12px;
+
+    color: #8e8e8e;
+}
+
+
+/* ========================================
+   CONTEÚDO DO POST
+======================================== */
+
+.post-conteudo {
+    margin-bottom: 15px;
+}
+
+
+.post-conteudo h2 {
+    font-size: 20px;
+
+    color: #262626;
+
+    margin-bottom: 10px;
+}
+
+
+.post-conteudo p {
+    font-size: 15px;
+
+    line-height: 1.5;
+
+    color: #4a4a4a;
+}
+
+
+/* ========================================
+   BOTÃO VER POST COMPLETO
+======================================== */
+
+.btn-ver-post {
+    background: none;
+
+    border: none;
+
+    padding: 0;
+
+    color: #385185;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    font-size: 14px;
+}
+
+
+.btn-ver-post:hover {
+    text-decoration: underline;
+}
+
+
+/* ========================================
+   AÇÕES DO POST
+======================================== */
+
+.post-acoes {
+    display: flex;
+
+    gap: 10px;
+
+    border-top: 1px solid #dbdbdb;
+
+    margin-top: 18px;
+
+    padding-top: 12px;
+}
+
+
+.post-acoes button {
+    flex: 1;
+
+    padding: 10px;
+
+    background: #ffffff;
+
+    border: none;
+
+    border-radius: 6px;
+
+    color: #555;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s,
+        color 0.2s;
+}
+
+
+.post-acoes button:hover {
+    background: #f5e6f2;
+
+    color: #d6249f;
+}
+
+
+/* ========================================
+   BOTÃO VER MAIS POSTS
+======================================== */
+
+.btn-ver-mais {
+    display: block;
+
+    width: 100%;
+
+    padding: 13px;
+
+    margin: 10px 0 30px;
+
+    border: none;
+
+    border-radius: 6px;
+
+    background: linear-gradient(
+        90deg,
+        #405DE6,
+        #833AB4,
+        #E1306C
+    );
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: opacity 0.2s;
+}
+
+
+.btn-ver-mais:hover {
+    opacity: 0.85;
+}
+
+
+/* ========================================
+   RESPONSIVIDADE
+======================================== */
+
+@media (max-width: 700px) {
+
+    .menu-links {
+        width: 92%;
+    }
+
+
+    .busca-topo {
+        width: 180px;
+    }
+
+
+    .menu-icones {
+        gap: 10px;
+    }
+
+
+    .icon {
+        height: 30px;
+    }
+
+
+    .perfil-usuario {
+        width: 30px;
+
+        height: 30px;
+    }
+}
+
+
+@media (max-width: 550px) {
+
+    .logomarca img {
+        height: 30px;
+    }
+
+
+    .busca-topo {
+        display: none;
+    }
+
+
+    .menu-icones {
+        gap: 8px;
+    }
+
+
+    .feed-container {
+        margin-top: 15px;
+
+        padding: 0 8px;
+    }
+
+
+    .post {
+        padding: 15px;
+    }
 }

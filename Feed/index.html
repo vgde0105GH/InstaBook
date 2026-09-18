@@ -1,39 +1,390 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" href="./style.css">
-    <title>Feed</title>
+
+    <title>Feed - InstaBook</title>
+
 </head>
+
+
 <body>
+
+    <!-- ========================================
+         MENU PRINCIPAL
+    ========================================= -->
+
     <nav class="menu-principal">
+
         <div class="menu-links">
-            
-            <!-- LOGOMARCA (Agora dentro da div correta) -->
+
+            <!-- LOGOMARCA -->
+
             <div class="logomarca">
-                <img src="Images/instabook.png" alt="logomarca">
+
+                <img
+                    src="Images/instabook.png"
+                    alt="InstaBook"
+                >
+
             </div>
+
 
             <!-- CAMPO DE PESQUISA -->
-            <input type="text" name="ms" class="busca-topo" placeholder="Pesquisa">
 
-            <!-- GRUPO DE ÍCONES (Agora todos organizados juntos aqui dentro) -->
+            <input
+                type="text"
+                name="ms"
+                class="busca-topo"
+                placeholder="Pesquisa"
+            >
+
+
+            <!-- ÍCONES -->
+
             <div class="menu-icones">
-                <img src="Images/chat.jpg" class="icon" alt="Chat">
-                <img src="Images/add.png" class="icon" alt="Adicionar">
-                <img src="Images/explore.jpg" class="icon" alt="Explorar">
-                <img src="Images/curtir.jpg" class="icon" alt="Curtidas">
-                <img src="Images/enviar.jpg" class="icon" alt="Enviar">
-                <img src="Images/foto-perfil.jpg" class="icon perfil-usuario" alt="Perfil">
+
+                <img
+                    src="Images/chat.jpg"
+                    class="icon"
+                    alt="Chat"
+                >
+
+                <img
+                    src="Images/add.png"
+                    class="icon"
+                    alt="Adicionar"
+                >
+
+                <img
+                    src="Images/explore.jpg"
+                    class="icon"
+                    alt="Explorar"
+                >
+
+                <img
+                    src="Images/curtir.jpg"
+                    class="icon"
+                    alt="Curtidas"
+                >
+
+                <img
+                    src="Images/enviar.jpg"
+                    class="icon"
+                    alt="Enviar"
+                >
+
+                <img
+                    src="Images/foto-perfil.jpg"
+                    class="icon perfil-usuario"
+                    alt="Perfil"
+                >
+
             </div>
-        
+
         </div>
+
     </nav>
+
+
+
+    <!-- ========================================
+         CONTEÚDO PRINCIPAL DO FEED
+    ========================================= -->
+
+    <main class="feed-container">
+
+
+        <!-- ========================================
+             BOTÃO CRIAR POST
+        ========================================= -->
+
+        <section class="criar-post">
+
+            <div class="criar-post-info">
+
+                <img
+                    src="Images/foto-perfil.jpg"
+                    alt="Seu perfil"
+                >
+
+                <input
+                    type="text"
+                    placeholder="No que você está pensando?"
+                    readonly
+                >
+
+            </div>
+
+
+            <button class="btn-criar-post">
+                + Criar publicação
+            </button>
+
+        </section>
+
+
+
+        <!-- ========================================
+             POST 1
+        ========================================= -->
+
+        <article class="post">
+
+            <div class="post-cabecalho">
+
+                <img
+                    src="Images/foto-perfil.jpg"
+                    alt="Perfil do usuário"
+                    class="post-perfil"
+                >
+
+                <div class="post-usuario">
+
+                    <h3>Usuário InstaBook</h3>
+
+                    <span>
+                        18 de setembro de 2026 às 18:30
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="post-conteudo">
+
+                <h2>Meu primeiro post!</h2>
+
+                <p>
+                    Este é um exemplo de publicação no InstaBook.
+                    Aqui aparecerá uma pequena parte do conteúdo
+                    publicado pelo usuário.
+                </p>
+
+            </div>
+
+
+            <button class="btn-ver-post">
+                Ver post completo
+            </button>
+
+
+            <div class="post-acoes">
+
+                <button>
+                    ♡ Curtir
+                </button>
+
+                <button>
+                    💬 Comentar
+                </button>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- ========================================
+             POST 2
+        ========================================= -->
+
+        <article class="post">
+
+            <div class="post-cabecalho">
+
+                <img
+                    src="Images/foto-perfil.jpg"
+                    alt="Perfil do usuário"
+                    class="post-perfil"
+                >
+
+                <div class="post-usuario">
+
+                    <h3>João Silva</h3>
+
+                    <span>
+                        18 de setembro de 2026 às 16:20
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="post-conteudo">
+
+                <h2>Um ótimo dia!</h2>
+
+                <p>
+                    Hoje foi um dia muito bom. Aproveitei bastante
+                    e resolvi compartilhar um pouco desse momento
+                    com meus amigos.
+                </p>
+
+            </div>
+
+
+            <button class="btn-ver-post">
+                Ver post completo
+            </button>
+
+
+            <div class="post-acoes">
+
+                <button>
+                    ♡ Curtir
+                </button>
+
+                <button>
+                    💬 Comentar
+                </button>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- ========================================
+             POST 3
+        ========================================= -->
+
+        <article class="post">
+
+            <div class="post-cabecalho">
+
+                <img
+                    src="Images/foto-perfil.jpg"
+                    alt="Perfil do usuário"
+                    class="post-perfil"
+                >
+
+                <div class="post-usuario">
+
+                    <h3>Maria Oliveira</h3>
+
+                    <span>
+                        18 de setembro de 2026 às 14:45
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="post-conteudo">
+
+                <h2>Programação</h2>
+
+                <p>
+                    Hoje consegui terminar mais uma parte do meu
+                    projeto. Agora vou continuar trabalhando nas
+                    próximas funcionalidades.
+                </p>
+
+            </div>
+
+
+            <button class="btn-ver-post">
+                Ver post completo
+            </button>
+
+
+            <div class="post-acoes">
+
+                <button>
+                    ♡ Curtir
+                </button>
+
+                <button>
+                    💬 Comentar
+                </button>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- ========================================
+             POST 4
+        ======================================== -->
+
+        <article class="post">
+
+            <div class="post-cabecalho">
+
+                <img
+                    src="Images/foto-perfil.jpg"
+                    alt="Perfil do usuário"
+                    class="post-perfil"
+                >
+
+                <div class="post-usuario">
+
+                    <h3>Pedro Santos</h3>
+
+                    <span>
+                        17 de setembro de 2026 às 20:10
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="post-conteudo">
+
+                <h2>Fim de semana chegando!</h2>
+
+                <p>
+                    Finalmente o fim de semana está chegando.
+                    Alguém tem alguma ideia do que fazer?
+                </p>
+
+            </div>
+
+
+            <button class="btn-ver-post">
+                Ver post completo
+            </button>
+
+
+            <div class="post-acoes">
+
+                <button>
+                    ♡ Curtir
+                </button>
+
+                <button>
+                    💬 Comentar
+                </button>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- ========================================
+             VER MAIS
+        ========================================= -->
+
+        <button class="btn-ver-mais">
+            Ver mais posts
+        </button>
+
+
+    </main>
+
 </body>
+
 </html>
-
-
-<!-- //deve incluir o nome e uma parte do conteudo do post, e um botão para ver o post completo. Deve aparecer a data e hora do post, e o usuário que fez o post.
-//cerca de 4 posts devem aparecer na tela, com a opção de ver mais posts.
-//mais ou menos 3 botões um para criar um post,outro para curtir e outro para comentar no post. -->
