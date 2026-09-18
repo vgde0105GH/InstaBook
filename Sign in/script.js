@@ -9,29 +9,29 @@ document.addEventListener("DOMContentLoaded", () => {
         // Impede a página de recarregar imediatamente
         event.preventDefault(); 
 
-        let formularioValido = true;
-        const dadosFormulario = {};
+        let validForm = true;
+        const formData = {};
 
         // 3. Validação simples: verifica se todos os campos estão preenchidos
         inputs.forEach((input) => {
-            const caixaInput = input.closest(".input-box");
+            const inputBox = input.closest(".input-box");
 
             if (input.value.trim() === "") {
-                formularioValido = false;
+                validForm = false;
                 // Aplica uma borda vermelha de erro
-                caixaInput.style.borderColor = "#fd5949"; 
+                inputBox.style.borderColor = "#fd5949"; 
             } else {
                 // Remove o erro se já estiver preenchido
-                caixaInput.style.borderColor = "#dbdbdb"; 
+                inputBox.style.borderColor = "#dbdbdb"; 
                 
                 // Salva o valor usando o placeholder como referência temporária
                 const chave = input.getAttribute("placeholder");
-                dadosFormulario[chave] = input.value.trim();
+                formData[chave] = input.value.trim();
             }
         });
 
         // 4. Se algum campo estiver vazio, avisa o usuário e para a execução
-        if (!formularioValido) {
+        if (!validForm) {
             alert("Por favor, preencha todos os campos obrigatórios.");
             return;
         }
@@ -43,8 +43,8 @@ document.addEventListener("DOMContentLoaded", () => {
         submitButton.style.opacity = "0.7";
 
         setTimeout(() => {
-            alert(`Sucesso! Conta criada para o usuário: ${dadosFormulario["Usuário"]}`);
-            console.log("Dados enviados para o banco de dados:", dadosFormulario);
+            alert(`Sucesso! Conta criada para o usuário: ${formData["Usuário"]}`);
+            console.log("Dados enviados para o banco de dados:", formData);
             
             // Aqui você redirecionaria o usuário ou limparia o formulário
             form.reset();
