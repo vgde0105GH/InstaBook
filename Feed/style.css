@@ -1,0 +1,105 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Força que nenhuma imagem quebre o layout */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+*:focus{
+    outline: none;
+}
+
+body {
+    background: #fff;
+    font-family: 'Roboto', sans-serif;
+    padding-top: 60px; /* Deixa o espaço para o menu fixo não cobrir o feed */
+}
+
+/* ESTRUTURA DA BARRA FIXA */
+.menu-principal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px; /* Aumentado levemente para acomodar melhor o logo do InstaBook */
+    background: #fff;
+    border-bottom: 1px solid #dbdbdb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* CONTAINER DOS TRÊS BLOCOS PRINCIPAIS */
+.menu-links {
+    width: 95%;
+    max-width: 1000px;
+    height: 100%;
+    display: flex;
+    justify-content: space-between; /* Separa estritamente em: Esquerda, Centro e Direita */
+    align-items: center;
+}
+
+/* 1. CONFIGURAÇÃO DO LOGOTIPO */
+.logomarca {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.logomarca img {
+    height: 38px; /* Controla o tamanho do logo */
+    width: auto;
+    /* Se a sua imagem tiver fundo preto puro e você quiser torná-lo transparente, 
+       descomente a linha abaixo removendo as barras: */
+    /* mix-blend-mode: multiply; */
+}
+
+/* 2. CONFIGURAÇÃO DA BARRA DE PESQUISA */
+.busca-topo {
+    width: 240px;
+    height: 34px;
+    background: #efefef;
+    border: none;
+    border-radius: 8px;
+    padding: 0 15px;
+    color: #262626;
+    text-align: center;
+}
+
+.busca-topo::placeholder {
+    color: #8e8e8e;
+}
+
+/* 3. CONFIGURAÇÃO DO GRUPO DE ÍCONES */
+.menu-icones {
+    display: flex;
+    align-items: center;
+    gap: 18px; /* Dá um espaçamento padrão e idêntico entre cada ícone */
+}
+
+.icon {
+    height: 35px; /* Tamanho padrão de ícones do Instagram */
+    width: auto;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.icon:hover {
+    transform: scale(1.1); /* Efeito sutil ao passar o mouse */
+}
+
+/* Ajuste específico para a foto de perfil ficar redonda */
+.perfil-usuario {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid #dbdbdb;
+}
