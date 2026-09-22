@@ -1,39 +1,204 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
-    <title>Feed</title>
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>InstaBook - Feed</title>
+
+    <link
+        rel="stylesheet"
+        href="./style.css"
+    >
+
 </head>
+
 <body>
-    <nav class="menu-principal">
-        <div class="menu-links">
-            
-            <!-- LOGOMARCA (Agora dentro da div correta) -->
-            <div class="logomarca">
-                <img src="Images/instabook.png" alt="logomarca">
-            </div>
 
-            <!-- CAMPO DE PESQUISA -->
-            <input type="text" name="ms" class="busca-topo" placeholder="Pesquisa">
+    <!-- SIDEBAR -->
 
-            <!-- GRUPO DE ÍCONES (Agora todos organizados juntos aqui dentro) -->
-            <div class="menu-icones">
-                <img src="Images/chat.jpg" class="icon" alt="Chat">
-                <img src="Images/add.png" class="icon" alt="Adicionar">
-                <img src="Images/explore.jpg" class="icon" alt="Explorar">
-                <img src="Images/curtir.jpg" class="icon" alt="Curtidas">
-                <img src="Images/enviar.jpg" class="icon" alt="Enviar">
-                <img src="Images/foto-perfil.jpg" class="icon perfil-usuario" alt="Perfil">
-            </div>
-        
+    <aside class="sidebar">
+
+        <div class="logo">
+            <span>◎</span>
+            InstaBook
         </div>
-    </nav>
+
+        <div class="user-profile">
+
+            <div class="profile-picture">
+                V
+            </div>
+
+            <div>
+                <strong>Victor Oliveira</strong>
+                <span>@victor</span>
+            </div>
+
+        </div>
+
+        <nav class="sidebar-menu">
+
+            <button
+                class="menu-item active"
+                data-page="feed"
+            >
+                <span>⌂</span>
+                Feed
+            </button>
+
+            <button
+                class="menu-item"
+                data-page="create"
+            >
+                <span>＋</span>
+                Criar publicação
+            </button>
+
+            <button
+                class="menu-item"
+                data-page="liked"
+            >
+                <span>♥</span>
+                Posts curtidos
+            </button>
+
+            <button
+                class="menu-item"
+                data-page="profile"
+            >
+                <span>●</span>
+                Meu perfil
+            </button>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <button class="menu-item">
+                <span>⚙</span>
+                Configurações
+            </button>
+
+            <button class="menu-item">
+                <span>↪</span>
+                Sair
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- CONTEÚDO PRINCIPAL -->
+
+    <main class="main-content">
+
+        <!-- CABEÇALHO -->
+
+        <header class="top-bar">
+
+            <div>
+
+                <h1>Feed</h1>
+
+                <p>
+                    Veja as publicações dos seus amigos
+                </p>
+
+            </div>
+
+            <div class="top-profile">
+
+                <div class="small-profile">
+                    V
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- FEED -->
+
+        <section
+            id="feedPage"
+            class="page"
+        >
+
+            <div id="postsContainer">
+
+                <!-- Os posts serão criados pelo JavaScript -->
+
+            </div>
+
+        </section>
+
+
+        <!-- TELA DE POST COMPLETO -->
+
+        <section
+            id="postPage"
+            class="page hidden"
+        >
+
+            <button
+                id="backButton"
+                class="back-button"
+            >
+                ← Voltar para o feed
+            </button>
+
+            <div id="fullPostContainer">
+
+                <!-- O post completo será inserido pelo JavaScript -->
+
+            </div>
+
+        </section>
+
+
+        <!-- PÁGINAS FUTURAS -->
+
+        <section
+            id="otherPage"
+            class="page hidden"
+        >
+
+            <div class="empty-page">
+
+                <div class="empty-icon">
+                    🚧
+                </div>
+
+                <h2>Página em desenvolvimento</h2>
+
+                <p>
+                    Essa parte será criada posteriormente.
+                </p>
+
+                <button
+                    id="returnFeedButton"
+                    class="primary-button"
+                >
+                    Voltar para o feed
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="./script.js"></script>
+
 </body>
+
 </html>
-
-
-<!-- //deve incluir o nome e uma parte do conteudo do post, e um botão para ver o post completo. Deve aparecer a data e hora do post, e o usuário que fez o post.
-//cerca de 4 posts devem aparecer na tela, com a opção de ver mais posts.
-//mais ou menos 3 botões um para criar um post,outro para curtir e outro para comentar no post. -->
