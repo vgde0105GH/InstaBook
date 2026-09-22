@@ -1,27 +1,48 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Criar Post</title>
 
-    <link rel="stylesheet" href="style.css">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Criar Post - InstaBook</title>
+
+    <!-- CSS GLOBAL -->
+    <link rel="stylesheet" href="../style.css">
+
+    <!-- CSS ESPECÍFICO -->
+    <link rel="stylesheet" href="./style.css">
+
 </head>
 
 <body>
 
     <div class="container">
 
-        <div class="formulario">
+        <div class="formulario card">
 
-            <h1>Criar novo post</h1>
-            <p class="subtitulo">Compartilhe algo com outras pessoas</p>
+            <h1 class="page-title">
+                Criar novo post
+            </h1>
+
+            <p class="page-subtitle">
+                Compartilhe algo com outras pessoas
+            </p>
+
 
             <form>
 
-                <label for="titulo">Título</label>
+                <label for="titulo">
+                    Título
+                </label>
+
                 <input
+                    class="input"
                     type="text"
                     id="titulo"
                     name="titulo"
@@ -29,15 +50,24 @@
                     required
                 >
 
-                <label for="conteudo">Conteúdo</label>
+
+                <label for="conteudo">
+                    Conteúdo
+                </label>
+
                 <textarea
+                    class="input"
                     id="conteudo"
                     name="conteudo"
                     placeholder="Escreva o conteúdo do seu post..."
                     required
                 ></textarea>
 
-                <label for="imagem">Adicionar imagem</label>
+
+                <label for="imagem">
+                    Adicionar imagem
+                </label>
+
                 <input
                     type="file"
                     id="imagem"
@@ -45,13 +75,20 @@
                     accept="image/*"
                 >
 
+
                 <div class="botoes">
 
-                    <button type="submit" class="btn-enviar">
+                    <button
+                        type="submit"
+                        class="primary-button btn-enviar"
+                    >
                         Enviar post
                     </button>
 
-                    <button type="reset" class="btn-cancelar">
+                    <button
+                        type="reset"
+                        class="btn-cancelar"
+                    >
                         Cancelar
                     </button>
 
@@ -63,14 +100,9 @@
 
     </div>
 
+
+    <script src="./script.js"></script>
+
 </body>
+
 </html>
-
-
-
-
-
-
-
-<!-- //Deve ter um formulário para criar um post, com campos para o título, conteúdo e a opção de adicionar uma imagem.
-// Deve haver um botão para enviar o post e outro para cancelar a criação do post. -->

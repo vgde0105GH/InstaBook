@@ -2,75 +2,155 @@
 <html lang="pt-BR">
 
 <head>
+
     <meta charset="UTF-8">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
+    <!-- CSS GLOBAL -->
+    <link rel="stylesheet" href="../style.css">
+
+    <!-- CSS ESPECÍFICO DO LOGIN -->
     <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer">
-    <title>login</title>
+
+    <!-- FONT AWESOME -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+    >
+
+    <title>Login - InstaBook</title>
+
 </head>
+
 
 <body>
 
-    <div class="container">
+    <main class="container">
 
         <div class="login-card">
 
-            <h2>Login</h2>
+            <h1>
+                Login
+            </h1>
 
-            <form action="">
+            <p class="subtitle">
+                Entre na sua conta do InstaBook
+            </p>
+
+
+            <form id="loginForm">
+
+
+                <!-- TAG -->
 
                 <div class="input-box">
 
                     <span class="icon">
-                        <i class="fa-solid fa-user"></i>
+
+                        <i class="fa-solid fa-at"></i>
+
                     </span>
 
-                    <input type="text" placeholder="Tag(#)">
+                    <input
+                        type="text"
+                        id="tag"
+                        name="tag"
+                        placeholder="Tag (#)"
+                        required
+                    >
 
                 </div>
 
+
+                <!-- SENHA -->
 
                 <div class="input-box">
-                    <span class="icon"> <i class="fa-solid fa-lock"></i> </span>
-                    <input type="password" placeholder="Senha">
+
+                    <span class="icon">
+
+                        <i class="fa-solid fa-lock"></i>
+
+                    </span>
+
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="Senha"
+                        required
+                    >
 
                 </div>
 
+
+                <!-- OPÇÕES -->
 
                 <div class="options">
 
                     <label>
-                        <input type="checkbox">
+
+                        <input
+                            type="checkbox"
+                            id="remember"
+                        >
+
                         Lembrar-me
+
                     </label>
 
-                    <a href="" class="link">
+
+                    <a
+                        href="#"
+                        class="link"
+                    >
                         Esqueceu a senha?
                     </a>
 
                 </div>
 
 
-                <button class="bnt">
+                <!-- BOTÃO -->
+
+                <button
+                    type="submit"
+                    class="btn"
+                >
                     Entrar
                 </button>
+
 
             </form>
 
 
+            <!-- CADASTRO -->
+
             <p class="link-p">
 
-                <a href="" class="link">
-                    Não tem uma conta
+                Não tem uma conta?
+
+                <a
+                    href="../Sign in/index.html"
+                    class="link"
+                >
+                    Criar conta
                 </a>
 
             </p>
 
+
         </div>
 
-    </div>
+    </main>
+
+
+    <script src="./script.js"></script>
 
 </body>
 

@@ -1,70 +1,119 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-    // 1. Mapeia os elementos da página
-    const form = document.querySelector("form");
-    const inputs = document.querySelectorAll(".input-box input");
-    const submitButton = document.querySelector(".bnt");
-    const rememberCheckbox = document.querySelector(
-        '.options input[type="checkbox"]'
-    );
+    const form =
+        document.getElementById("loginForm");
+
+    const tagInput =
+        document.getElementById("tag");
+
+    const passwordInput =
+        document.getElementById("password");
+
+    const rememberCheckbox =
+        document.getElementById("remember");
+
+    const submitButton =
+        document.querySelector(".btn");
 
 
-    // 2. Evento quando o usuário tenta fazer login
+    /* ========================================
+       LOGIN
+    ======================================== */
+
     form.addEventListener("submit", (event) => {
 
-        // Impede o formulário de recarregar a página
         event.preventDefault();
+
 
         let validForm = true;
 
-        const formData = {};
 
+        /* ========================================
+           VALIDAR TAG
+        ======================================== */
 
-        // 3. Verifica se os campos estão preenchidos
-        inputs.forEach((input) => {
+        if (tagInput.value.trim() === "") {
 
-            const inputBox = input.closest(".input-box");
+            tagInput
+                .closest(".input-box")
+                .style.borderColor =
+                "var(--danger-color)";
 
-            if (input.value.trim() === "") {
+            validForm = false;
 
-                validForm = false;
-
-                // Mostra o campo com borda vermelha
-                inputBox.style.borderColor = "#fd5949";
-
-            } else {
-
-                // Remove a borda de erro
-                inputBox.style.borderColor = "#dbdbdb";
-
-                // Pega o placeholder do campo
-                const key = input.getAttribute("placeholder");
-
-                // Guarda o valor digitado
-                formData[key] = input.value.trim();
-            }
-        });
-
-
-        // 4. Se algum campo estiver vazio
-        if (!validForm) {
-
-            alert("Por favor, preencha a Tag e a senha.");
-
-            return;
         }
 
 
-        // 5. Mostra o estado de carregamento
-        submitButton.innerText = "Entrando...";
+        /* ========================================
+           VALIDAR SENHA
+        ======================================== */
+
+        if (passwordInput.value.trim() === "") {
+
+            passwordInput
+                .closest(".input-box")
+                .style.borderColor =
+                "var(--danger-color)";
+
+            validForm = false;
+
+        }
+
+
+        /* ========================================
+           VERIFICAR FORMULÁRIO
+        ======================================== */
+
+        if (!validForm) {
+
+            alert(
+                "Por favor, preencha a Tag e a senha."
+            );
+
+            return;
+
+        }
+
+
+        /* ========================================
+           DADOS DO LOGIN
+        ======================================== */
+
+        const loginData = {
+
+            tag:
+                tagInput.value.trim(),
+
+            password:
+                passwordInput.value.trim()
+
+        };
+
+
+        console.log(
+            "Dados do login:",
+            loginData
+        );
+
+
+        /* ========================================
+           CARREGAMENTO
+        ======================================== */
+
+        submitButton.innerText =
+            "Entrando...";
+
         submitButton.disabled = true;
+
         submitButton.style.opacity = "0.7";
 
 
-        // 6. Simula o processo de login
+        /* ========================================
+           SIMULAÇÃO DO LOGIN
+        ======================================== */
+
         setTimeout(() => {
 
-            console.log("Dados do login:", formData);
 
             console.log(
                 "Lembrar-me:",
@@ -72,61 +121,93 @@ document.addEventListener("DOMContentLoaded", () => {
             );
 
 
-            // 7. Simula login realizado com sucesso
-            alert(
-                `Login realizado com sucesso!\nTag: ${formData["Tag(#)"]}`
-            );
+            /* ========================================
+               LEMBRAR TAG
+            ======================================== */
 
-
-            // 8. Salva a Tag caso "Lembrar-me" esteja marcado
             if (rememberCheckbox.checked) {
 
                 localStorage.setItem(
                     "rememberedTag",
-                    formData["Tag(#)"]
+                    loginData.tag
                 );
 
             } else {
 
-                localStorage.removeItem("rememberedTag");
+                localStorage.removeItem(
+                    "rememberedTag"
+                );
+
             }
 
 
-            // 9. Limpa o formulário
-            form.reset();
+            /* ========================================
+               LOGIN REALIZADO
+            ======================================== */
+
+            alert(
+                `Login realizado com sucesso!\nTag: ${loginData.tag}`
+            );
 
 
-            // 10. Restaura o botão
-            submitButton.innerText = "Entrar";
-            submitButton.disabled = false;
-            submitButton.style.opacity = "1";
+            /* ========================================
+               IR PARA O FEED
+            ======================================== */
+
+            window.location.href =
+                "../Feed/index.html";
+
 
         }, 1500);
+
 
     });
 
 
-    // 11. Remove a borda vermelha quando o usuário começa a digitar
+    /* ========================================
+       REMOVER ERRO AO DIGITAR
+    ======================================== */
+
+    const inputs =
+        document.querySelectorAll(
+            ".input-box input"
+        );
+
+
     inputs.forEach((input) => {
 
         input.addEventListener("input", () => {
 
-            const inputBox = input.closest(".input-box");
+            const inputBox =
+                input.closest(".input-box");
 
-            inputBox.style.borderColor = "#a307ba";
+
+            inputBox.style.borderColor =
+                "var(--input-border)";
+
         });
 
     });
 
 
-    // 12. Recupera a Tag salva anteriormente
-    const rememberedTag = localStorage.getItem("rememberedTag");
+    /* ========================================
+       RECUPERAR TAG SALVA
+    ======================================== */
+
+    const rememberedTag =
+        localStorage.getItem(
+            "rememberedTag"
+        );
+
 
     if (rememberedTag) {
 
-        inputs[0].value = rememberedTag;
+        tagInput.value =
+            rememberedTag;
 
-        rememberCheckbox.checked = true;
+        rememberCheckbox.checked =
+            true;
+
     }
 
 });

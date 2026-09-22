@@ -1,64 +1,143 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // 1. Mapeia os elementos do formulário
-    const form = document.querySelector("form");
-    const inputs = document.querySelectorAll(".input-box input");
-    const submitButton = document.querySelector(".bnt");
 
-    // 2. Evento quando o usuário clica em "Entrar"
+    const form = document.getElementById("signForm");
+
+    const inputs =
+        document.querySelectorAll(".input-box input");
+
+    const submitButton =
+        document.querySelector(".btn");
+
+
+    /* ========================================
+       ENVIO DO FORMULÁRIO
+    ======================================== */
+
     form.addEventListener("submit", (event) => {
-        // Impede a página de recarregar imediatamente
-        event.preventDefault(); 
+
+        event.preventDefault();
+
 
         let validForm = true;
-        const formData = {};
 
-        // 3. Validação simples: verifica se todos os campos estão preenchidos
+
+        const formData = {
+
+            email:
+                document.getElementById("email").value.trim(),
+
+            password:
+                document.getElementById("password").value.trim(),
+
+            tag:
+                document.getElementById("tag").value.trim(),
+
+            name:
+                document.getElementById("name").value.trim()
+
+        };
+
+
+        /* ========================================
+           VALIDAR CAMPOS
+        ======================================== */
+
         inputs.forEach((input) => {
-            const inputBox = input.closest(".input-box");
+
+            const inputBox =
+                input.closest(".input-box");
+
 
             if (input.value.trim() === "") {
+
                 validForm = false;
-                // Aplica uma borda vermelha de erro
-                inputBox.style.borderColor = "#fd5949"; 
+
+                inputBox.style.borderColor =
+                    "var(--danger-color)";
+
             } else {
-                // Remove o erro se já estiver preenchido
-                inputBox.style.borderColor = "#dbdbdb"; 
-                
-                // Salva o valor usando o placeholder como referência temporária
-                const chave = input.getAttribute("placeholder");
-                formData[chave] = input.value.trim();
+
+                inputBox.style.borderColor =
+                    "var(--input-border)";
+
             }
+
         });
 
-        // 4. Se algum campo estiver vazio, avisa o usuário e para a execução
+
         if (!validForm) {
-            alert("Por favor, preencha todos os campos obrigatórios.");
+
+            alert(
+                "Por favor, preencha todos os campos."
+            );
+
             return;
+
         }
 
-        // 5. Simulação de sucesso (Estilo Instagram/Facebook)
-        // Altera o estado do botão para indicar carregamento
-        submitButton.innerText = "Carregando...";
+
+        /* ========================================
+           CARREGAMENTO
+        ======================================== */
+
+        submitButton.innerText =
+            "Criando conta...";
+
         submitButton.disabled = true;
+
         submitButton.style.opacity = "0.7";
 
+
+        /* ========================================
+           SIMULAÇÃO
+        ======================================== */
+
         setTimeout(() => {
-            alert(`Sucesso! Conta criada para o usuário: ${formData["Usuário"]}`);
-            console.log("Dados enviados para o banco de dados:", formData);
-            
-            // Aqui você redirecionaria o usuário ou limparia o formulário
+
+            alert(
+                `Conta criada com sucesso, ${formData.name}!`
+            );
+
+
+            console.log(
+                "Dados do usuário:",
+                formData
+            );
+
+
             form.reset();
-            submitButton.innerText = "Entrar";
+
+
+            submitButton.innerText =
+                "Criar Conta";
+
             submitButton.disabled = false;
+
             submitButton.style.opacity = "1";
+
+
         }, 1500);
+
     });
 
-    // 6. Remove a borda vermelha de erro assim que o usuário começar a digitar
+
+    /* ========================================
+       REMOVER ERRO AO DIGITAR
+    ======================================== */
+
     inputs.forEach((input) => {
+
         input.addEventListener("input", () => {
-            const caixaInput = input.closest(".input-box");
-            caixaInput.style.borderColor = "#a307ba"; // Volta para a cor de foco do Instagram
+
+            const inputBox =
+                input.closest(".input-box");
+
+
+            inputBox.style.borderColor =
+                "var(--input-border)";
+
         });
+
     });
+
 });

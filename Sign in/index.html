@@ -1,42 +1,160 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign in</title>
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Criar Conta - InstaBook</title>
+
+    <!-- CSS GLOBAL -->
+    <link rel="stylesheet" href="../style.css">
+
+    <!-- CSS ESPECÍFICO -->
     <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    <!-- FONT AWESOME -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+    >
+
 </head>
+
+
 <body>
-    <div class="container">
+
+    <main class="container">
+
         <div class="sign-card">
-            <h2>Sign</h2>
 
-            <form action="">
-                <div class="input-box">
-                    <span class="icon"> <i class="fa-solid fa-user"></i> </span>
-                    <input type="text" placeholder="Email">
-                </div>
+            <h1>
+                Criar conta
+            </h1>
+
+            <p class="subtitle">
+                Crie sua conta no InstaBook
+            </p>
+
+
+            <form id="signForm">
+
+
+                <!-- EMAIL -->
 
                 <div class="input-box">
-                    <span class="icon"> <i class="fa-solid fa-unlock"></i> </span>
-                    <input type="password" placeholder="Senha">
-                </div>
-                <div class="input-box">
-                    <span class="icon"> <i class="fa-solid fa-user"></i> </span>
-                    <input type="text" placeholder="Tag(#)">
-                </div>
-                <div class="input-box">
-                    <span class="icon"> <i class="fa-solid fa-user"></i> </span>
-                    <input type="text" placeholder="Nome">
+
+                    <span class="icon">
+                        <i class="fa-solid fa-envelope"></i>
+                    </span>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Email"
+                        required
+                    >
+
                 </div>
 
-                <button class="bnt"> Criar Conta </button>
+
+                <!-- SENHA -->
+
+                <div class="input-box">
+
+                    <span class="icon">
+                        <i class="fa-solid fa-lock"></i>
+                    </span>
+
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="Senha"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- TAG -->
+
+                <div class="input-box">
+
+                    <span class="icon">
+                        <i class="fa-solid fa-at"></i>
+                    </span>
+
+                    <input
+                        type="text"
+                        id="tag"
+                        name="tag"
+                        placeholder="Tag (#)"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- NOME -->
+
+                <div class="input-box">
+
+                    <span class="icon">
+                        <i class="fa-solid fa-user"></i>
+                    </span>
+
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="Nome"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- BOTÃO -->
+
+                <button
+                    type="submit"
+                    class="btn"
+                >
+                    Criar Conta
+                </button>
+
+
             </form>
+
+
+            <p class="login-text">
+
+                Já possui uma conta?
+
+                <a href="../Login in/index.html">
+                    Entrar
+                </a>
+
+            </p>
+
 
         </div>
 
-    </div>
-    
+    </main>
+
+
+    <script src="./script.js"></script>
+
 </body>
+
 </html>

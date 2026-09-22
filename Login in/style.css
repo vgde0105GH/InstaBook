@@ -1,37 +1,22 @@
 /* ========================================
-   RESET BÁSICO
-   Remove margens e espaçamentos padrão
+   LOGIN
 ======================================== */
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-
-    font-family: -apple-system, BlinkMacSystemFont,
-        "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-}
 
 
 /* ========================================
-   FUNDO DA PÁGINA
-   Gradiente inspirado no Instagram
+   FUNDO
 ======================================== */
 
 body {
-    background: radial-gradient(
-        circle at 30% 107%,
-        #fdf497 0%,
-        #fdf497 5%,
-        #fd5949 45%,
-        #d6249f 60%,
-        #285AEB 90%
-    );
 
     min-height: 100vh;
 
+    background: var(--primary-gradient);
+
     display: flex;
+
     justify-content: center;
+
     align-items: center;
 
     padding: 20px;
@@ -43,31 +28,30 @@ body {
 ======================================== */
 
 .container {
+
     width: 100%;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    max-width: 420px;
 }
 
 
 /* ========================================
-   CARD DE LOGIN
-   IMPORTANTE:
-   Toda a área do login fica branca
+   CARD
 ======================================== */
 
 .login-card {
-    width: 100%;
-    max-width: 400px;
 
-    background-color: #ffffff;
+    width: 100%;
+
+    background-color: var(--card-color);
 
     padding: 40px 30px;
 
-    border-radius: 8px;
+    border-radius: 14px;
 
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    box-shadow:
+        0 8px 30px
+        rgba(0, 0, 0, 0.18);
 
     text-align: center;
 }
@@ -77,74 +61,88 @@ body {
    TÍTULO
 ======================================== */
 
-.login-card h2 {
-    color: #d6249f;
+.login-card h1 {
 
-    font-size: 2rem;
+    color: var(--primary-pink);
 
-    margin-bottom: 25px;
+    font-size: 30px;
+
+    margin-bottom: 8px;
 
     font-weight: 700;
 }
 
 
+.subtitle {
+
+    color: var(--secondary-text);
+
+    font-size: 14px;
+
+    margin-bottom: 28px;
+}
+
+
 /* ========================================
-   CAIXA DOS INPUTS
+   INPUT
 ======================================== */
 
 .input-box {
+
     display: flex;
 
     align-items: center;
 
     width: 100%;
 
-    background-color: #ffffff;
+    background-color: #fafafa;
 
-    border: 1px solid #dbdbdb;
+    border: 1px solid var(--input-border);
 
-    border-radius: 6px;
+    border-radius: 8px;
 
     margin-bottom: 14px;
 
     padding: 0 12px;
 
-    transition: border-color 0.2s ease,
-                box-shadow 0.2s ease;
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
 }
 
-
-/* ========================================
-   INPUT QUANDO ESTÁ SELECIONADO
-======================================== */
 
 .input-box:focus-within {
-    border-color: #d6249f;
 
-    box-shadow: 0 0 0 2px rgba(214, 36, 159, 0.10);
+    border-color: var(--primary-pink);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(255, 0, 105, 0.10);
 }
 
 
 /* ========================================
-   ÍCONES
+   ÍCONE
 ======================================== */
 
 .input-box .icon {
-    color: #8e8e8e;
+
+    color: var(--secondary-text);
 
     margin-right: 10px;
 
-    font-size: 0.9rem;
+    font-size: 14px;
 
     min-width: 16px;
 }
 
 
 /* ========================================
-   CAMPOS DE TEXTO
+   INPUT
 ======================================== */
 
 .input-box input {
+
     width: 100%;
 
     border: none;
@@ -153,48 +151,42 @@ body {
 
     background: transparent;
 
-    padding: 12px 0;
+    padding: 13px 0;
 
-    font-size: 0.9rem;
+    font-size: 14px;
 
-    color: #262626;
+    color: var(--text-color);
 }
 
 
-/* ========================================
-   PLACEHOLDER
-======================================== */
-
 .input-box input::placeholder {
-    color: #8e8e8e;
+
+    color: var(--secondary-text);
 }
 
 
 /* ========================================
    OPÇÕES
-   Lembrar-me + Esqueceu a senha?
 ======================================== */
 
 .options {
+
     display: flex;
 
     justify-content: space-between;
 
     align-items: center;
 
-    font-size: 0.85rem;
+    font-size: 13px;
 
     margin-bottom: 20px;
 
-    color: #65676b;
+    color: var(--secondary-text);
 }
 
 
-/* ========================================
-   CHECKBOX
-======================================== */
-
 .options label {
+
     display: flex;
 
     align-items: center;
@@ -206,11 +198,12 @@ body {
 
 
 /* ========================================
-   LINKS
+   LINK
 ======================================== */
 
 .link {
-    color: #385185;
+
+    color: var(--primary-purple);
 
     text-decoration: none;
 
@@ -219,84 +212,83 @@ body {
 
 
 .link:hover {
+
     text-decoration: underline;
 }
 
 
 /* ========================================
-   BOTÃO ENTRAR
-   Gradiente inspirado no Instagram
+   BOTÃO
 ======================================== */
 
-.bnt {
+.btn {
+
     width: 100%;
 
-    padding: 12px;
-
-    background: linear-gradient(
-        90deg,
-        #405DE6,
-        #833AB4,
-        #C13584,
-        #E1306C,
-        #FD1D1D
-    );
+    padding: 13px;
 
     border: none;
 
-    border-radius: 6px;
+    border-radius: 8px;
 
-    color: #ffffff;
+    background: var(--primary-gradient);
 
-    font-size: 0.95rem;
+    color: white;
+
+    font-size: 15px;
 
     font-weight: 700;
 
     cursor: pointer;
 
-    transition: transform 0.2s ease,
-                opacity 0.2s ease,
-                box-shadow 0.2s ease;
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease,
+        box-shadow 0.2s ease;
 }
 
 
-/* ========================================
-   EFEITO HOVER DO BOTÃO
-======================================== */
+.btn:hover {
 
-.bnt:hover {
     opacity: 0.9;
 
     transform: translateY(-1px);
 
-    box-shadow: 0 4px 10px rgba(214, 36, 159, 0.25);
+    box-shadow:
+        0 4px 10px
+        rgba(214, 36, 159, 0.25);
 }
 
 
-/* ========================================
-   EFEITO AO CLICAR
-======================================== */
+.btn:active {
 
-.bnt:active {
     transform: translateY(0);
 }
 
 
+.btn:disabled {
+
+    cursor: not-allowed;
+
+    transform: none;
+}
+
+
 /* ========================================
-   PARTE INFERIOR
-   "Não tem uma conta"
+   CADASTRO
 ======================================== */
 
 .link-p {
+
     margin-top: 25px;
 
     padding-top: 20px;
 
-    border-top: 1px solid #dbdbdb;
+    border-top: 1px solid var(--border-color);
 
-    font-size: 0.9rem;
+    font-size: 14px;
 
-    color: #65676b;
+    color: var(--secondary-text);
 }
 
 
@@ -307,14 +299,20 @@ body {
 @media (max-width: 480px) {
 
     .login-card {
+
         padding: 30px 20px;
     }
 
-    .login-card h2 {
-        font-size: 1.8rem;
+
+    .login-card h1 {
+
+        font-size: 26px;
     }
 
+
     .options {
-        font-size: 0.8rem;
+
+        font-size: 12px;
     }
+
 }

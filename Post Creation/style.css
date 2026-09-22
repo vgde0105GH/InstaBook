@@ -1,126 +1,194 @@
+/* ========================================
+   POST CREATION
+======================================== */
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+
+/* ========================================
+   FUNDO DA PÁGINA
+======================================== */
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #f2f2f2;
 
     min-height: 100vh;
 
+    background: var(--primary-gradient);
+
     display: flex;
+
     justify-content: center;
+
     align-items: center;
+
+    padding: 30px;
 }
+
+
+/* ========================================
+   CONTAINER
+======================================== */
 
 .container {
+
     width: 100%;
-    max-width: 600px;
-    padding: 20px;
+
+    max-width: 650px;
 }
+
+
+/* ========================================
+   FORMULÁRIO
+======================================== */
 
 .formulario {
-    background-color: white;
-    padding: 30px;
-    border-radius: 12px;
 
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+    width: 100%;
+
 }
 
-h1 {
-    text-align: center;
-    margin-bottom: 8px;
-    color: #222;
-}
 
-.subtitulo {
-    text-align: center;
-    color: #777;
-    margin-bottom: 25px;
-}
+/* ========================================
+   FORM
+======================================== */
 
-form {
+.formulario form {
+
     display: flex;
+
     flex-direction: column;
 }
 
-label {
-    margin-bottom: 8px;
+
+/* ========================================
+   LABEL
+======================================== */
+
+.formulario label {
+
+    color: var(--text-color);
+
+    font-size: 14px;
+
     font-weight: bold;
-    color: #333;
+
+    margin-top: 18px;
+
+    margin-bottom: 7px;
 }
 
-input[type="text"],
-textarea {
-    width: 100%;
-    padding: 12px;
 
-    border: 1px solid #ccc;
-    border-radius: 7px;
+.formulario label:first-of-type {
 
-    font-size: 15px;
-    margin-bottom: 20px;
-
-    outline: none;
+    margin-top: 0;
 }
 
-input[type="text"]:focus,
-textarea:focus {
-    border-color: #555;
-}
 
-textarea {
-    height: 160px;
+/* ========================================
+   TEXTAREA
+======================================== */
+
+.formulario textarea {
+
+    min-height: 160px;
+
     resize: vertical;
 }
 
-input[type="file"] {
-    margin-bottom: 25px;
-    padding: 8px;
 
-    border: 1px solid #ccc;
-    border-radius: 7px;
+/* ========================================
+   IMAGEM
+======================================== */
 
-    background-color: #fafafa;
-}
+.formulario input[type="file"] {
 
-.botoes {
-    display: flex;
-    gap: 12px;
-}
-
-button {
-    flex: 1;
+    width: 100%;
 
     padding: 12px;
 
-    border: none;
-    border-radius: 7px;
+    border: 1px dashed #bbbbbb;
 
-    font-size: 15px;
+    border-radius: 9px;
+
+    background-color: #fafafa;
+
+    cursor: pointer;
+
+    font-size: 13px;
+}
+
+
+/* ========================================
+   BOTÕES
+======================================== */
+
+.botoes {
+
+    display: flex;
+
+    gap: 12px;
+
+    margin-top: 30px;
+}
+
+
+.botoes button {
+
+    flex: 1;
+}
+
+
+/* ========================================
+   BOTÃO CANCELAR
+======================================== */
+
+.btn-cancelar {
+
+    border: none;
+
+    padding: 12px 20px;
+
+    border-radius: 8px;
+
+    background-color: #eeeeee;
+
+    color: #444444;
+
+    font-size: 14px;
+
     font-weight: bold;
 
     cursor: pointer;
+
+    transition: 0.2s;
 }
 
-.btn-enviar {
-    background-color: #222;
-    color: white;
-}
-
-.btn-enviar:hover {
-    background-color: #444;
-}
-
-.btn-cancelar {
-    background-color: #ddd;
-    color: #333;
-}
 
 .btn-cancelar:hover {
-    background-color: #c8c8c8;
+
+    background-color: #dddddd;
 }
 
+
+/* ========================================
+   RESPONSIVIDADE
+======================================== */
+
+@media (max-width: 600px) {
+
+    body {
+
+        padding: 15px;
+    }
+
+
+    .formulario {
+
+        padding: 25px;
+    }
+
+
+    .botoes {
+
+        flex-direction: column;
+    }
+
+}

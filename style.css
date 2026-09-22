@@ -1,0 +1,187 @@
+/* ========================================
+   INSTABOOK - CSS GLOBAL
+======================================== */
+
+
+/* ========================================
+   CORES
+======================================== */
+
+:root {
+
+    --primary-orange: #ff7a00;
+
+    --primary-pink: #ff0069;
+
+    --primary-purple: #833ab4;
+
+    --primary-gradient: linear-gradient(
+        90deg,
+        #ff7a00,
+        #ff0069,
+        #833ab4
+    );
+
+    --background-color: #f5f5f5;
+
+    --card-color: #ffffff;
+
+    --text-color: #222222;
+
+    --secondary-text: #777777;
+
+    --border-color: #dddddd;
+
+    --input-border: #d5d5d5;
+
+    --danger-color: #e63946;
+
+    --success-color: #2a9d8f;
+
+}
+
+
+/* ========================================
+   CONFIGURAÇÕES GERAIS
+======================================== */
+
+* {
+    margin: 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+
+    background-color: var(--background-color);
+
+    color: var(--text-color);
+}
+
+
+/* ========================================
+   BOTÃO PRINCIPAL
+======================================== */
+
+.primary-button {
+
+    border: none;
+
+    padding: 12px 20px;
+
+    border-radius: 8px;
+
+    background: var(--primary-gradient);
+
+    color: white;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+
+.primary-button:hover {
+
+    opacity: 0.9;
+
+    transform: translateY(-1px);
+}
+
+
+/* ========================================
+   CARD
+======================================== */
+
+.card {
+
+    background-color: var(--card-color);
+
+    border: 1px solid var(--border-color);
+
+    border-radius: 14px;
+
+    padding: 20px;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+
+/* ========================================
+   INPUT
+======================================== */
+
+.input {
+
+    width: 100%;
+
+    padding: 12px;
+
+    border: 1px solid var(--input-border);
+
+    border-radius: 8px;
+
+    outline: none;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 14px;
+
+    transition: 0.2s;
+}
+
+
+.input:focus {
+
+    border-color: var(--primary-pink);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(214, 36, 159, 0.10);
+}
+
+
+/* ========================================
+   TÍTULOS
+======================================== */
+
+.page-title {
+
+    font-size: 28px;
+
+    color: var(--text-color);
+
+    margin-bottom: 8px;
+}
+
+
+.page-subtitle {
+
+    color: var(--secondary-text);
+
+    font-size: 14px;
+
+    margin-bottom: 25px;
+}
+
+
+/* ========================================
+   RESPONSIVIDADE
+======================================== */
+
+@media (max-width: 600px) {
+
+    .page-title {
+
+        font-size: 23px;
+    }
+
+}

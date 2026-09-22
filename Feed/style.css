@@ -1,34 +1,30 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: #f5f5f5;
-    color: #222;
-}
+/* ========================================
+   FEED
+======================================== */
 
 
-/* =========================
+/* ========================================
    SIDEBAR
-========================= */
+======================================== */
 
 .sidebar {
+
     position: fixed;
 
     left: 0;
+
     top: 0;
 
     width: 260px;
+
     height: 100vh;
 
-    background: #ffffff;
+    background-color: var(--card-color);
 
-    border-right: 1px solid #ddd;
+    border-right: 1px solid var(--border-color);
 
     display: flex;
+
     flex-direction: column;
 
     padding: 25px 18px;
@@ -37,91 +33,115 @@ body {
 }
 
 
-/* LOGO */
+/* ========================================
+   LOGO
+======================================== */
 
 .logo {
+
     font-size: 28px;
+
     font-weight: bold;
 
     margin-bottom: 35px;
 
-    background: linear-gradient(
-        45deg,
-        #ff7a00,
-        #ff0069,
-        #833ab4
-    );
+    background: var(--primary-gradient);
 
     -webkit-background-clip: text;
+
     -webkit-text-fill-color: transparent;
 }
 
+
 .logo span {
+
     font-size: 34px;
 }
 
 
-/* PERFIL */
+/* ========================================
+   PERFIL
+======================================== */
 
 .user-profile {
+
     display: flex;
+
     align-items: center;
 
     gap: 12px;
 
     padding-bottom: 25px;
 
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #eeeeee;
 }
 
-.profile-picture,
-.small-profile {
-    width: 42px;
-    height: 42px;
 
-    border-radius: 50%;
+.profile-picture,
+.small-profile,
+.post-avatar,
+.comment-avatar {
 
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
     color: white;
+
     font-weight: bold;
 
-    background: linear-gradient(
-        135deg,
-        #ff7a00,
-        #ff0069,
-        #833ab4
-    );
+    background: var(--primary-gradient);
 }
 
+
+.profile-picture {
+
+    width: 42px;
+
+    height: 42px;
+
+    border-radius: 50%;
+}
+
+
 .user-profile strong {
+
     display: block;
+
     font-size: 14px;
 }
 
+
 .user-profile span {
+
     display: block;
 
     margin-top: 3px;
 
-    color: #888;
+    color: var(--secondary-text);
 
     font-size: 12px;
 }
 
 
-/* MENU */
+/* ========================================
+   MENU
+======================================== */
 
 .sidebar-menu {
+
     margin-top: 25px;
 }
 
+
 .menu-item {
+
     width: 100%;
 
     border: none;
+
     background: transparent;
 
     padding: 14px 15px;
@@ -131,6 +151,7 @@ body {
     border-radius: 10px;
 
     display: flex;
+
     align-items: center;
 
     gap: 15px;
@@ -139,42 +160,46 @@ body {
 
     cursor: pointer;
 
-    color: #444;
+    color: #444444;
 
     text-align: left;
 
     transition: 0.2s;
 }
 
+
 .menu-item span {
+
     font-size: 21px;
 }
 
+
 .menu-item:hover {
-    background: #f1f1f1;
+
+    background-color: #f1f1f1;
 }
+
 
 .menu-item.active {
+
     color: white;
 
-    background: linear-gradient(
-        90deg,
-        #ff7a00,
-        #ff0069,
-        #833ab4
-    );
+    background: var(--primary-gradient);
 }
 
+
 .sidebar-bottom {
+
     margin-top: auto;
 }
 
 
-/* =========================
+/* ========================================
    CONTEÚDO
-========================= */
+======================================== */
 
 .main-content {
+
     margin-left: 260px;
 
     min-height: 100vh;
@@ -183,47 +208,65 @@ body {
 }
 
 
-/* CABEÇALHO */
-
 .top-bar {
+
     max-width: 900px;
 
     margin: auto;
 
     display: flex;
+
     align-items: center;
+
     justify-content: space-between;
 
     margin-bottom: 30px;
 }
 
+
 .top-bar h1 {
+
     font-size: 28px;
 }
 
+
 .top-bar p {
+
     margin-top: 5px;
 
-    color: #777;
+    color: var(--secondary-text);
 
     font-size: 14px;
 }
 
 
-/* =========================
+.small-profile {
+
+    width: 42px;
+
+    height: 42px;
+
+    border-radius: 50%;
+}
+
+
+/* ========================================
    POSTS
-========================= */
+======================================== */
 
 #postsContainer {
+
     max-width: 700px;
 
     margin: auto;
 }
 
-.post-card {
-    background: white;
 
-    border: 1px solid #ddd;
+.post-card {
+
+    background-color: var(--card-color);
+
+    border: 1px solid var(--border-color);
 
     border-radius: 14px;
 
@@ -233,9 +276,8 @@ body {
 }
 
 
-/* USUÁRIO */
-
 .post-header {
+
     display: flex;
 
     align-items: center;
@@ -245,61 +287,53 @@ body {
     padding: 18px;
 }
 
+
 .post-avatar {
+
     width: 45px;
+
     height: 45px;
 
     border-radius: 50%;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    background: linear-gradient(
-        135deg,
-        #ff7a00,
-        #ff0069,
-        #833ab4
-    );
-
-    color: white;
-
-    font-weight: bold;
 }
 
+
 .post-user strong {
+
     display: block;
 
     font-size: 15px;
 }
 
+
 .post-user span {
+
     display: block;
 
     margin-top: 3px;
 
-    color: #888;
+    color: var(--secondary-text);
 
     font-size: 12px;
 }
 
 
-/* CONTEÚDO */
-
 .post-content {
+
     padding: 0 18px 18px;
 }
 
+
 .post-content p {
+
     line-height: 1.5;
 
-    color: #333;
+    color: #333333;
 }
 
 
-/* IMAGEM */
-
 .post-image {
+
     width: 100%;
 
     height: 350px;
@@ -310,26 +344,28 @@ body {
 }
 
 
-/* INFORMAÇÕES */
+/* ========================================
+   INFORMAÇÕES DO POST
+======================================== */
 
 .post-info {
+
     display: flex;
 
     justify-content: space-between;
 
     padding: 15px 18px;
 
-    color: #777;
+    color: var(--secondary-text);
 
     font-size: 13px;
 
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #eeeeee;
 }
 
 
-/* AÇÕES */
-
 .post-actions {
+
     padding: 12px 18px;
 
     display: flex;
@@ -337,7 +373,9 @@ body {
     justify-content: space-between;
 }
 
+
 .post-action {
+
     border: none;
 
     background: transparent;
@@ -346,37 +384,27 @@ body {
 
     font-size: 14px;
 
-    color: #555;
+    color: #555555;
 
     padding: 8px 15px;
 
     border-radius: 8px;
-
-    transition: 0.2s;
 }
+
 
 .post-action:hover {
-    background: #f2f2f2;
+
+    background-color: #f2f2f2;
 }
 
-.post-action.like.active {
-    color: #e91e63;
-}
-
-
-/* BOTÃO VER POST */
 
 .view-post {
-    background: linear-gradient(
-        90deg,
-        #ff7a00,
-        #ff0069,
-        #833ab4
-    );
-
-    color: white;
 
     border: none;
+
+    background: var(--primary-gradient);
+
+    color: white;
 
     padding: 9px 18px;
 
@@ -387,29 +415,30 @@ body {
     font-weight: bold;
 }
 
-.view-post:hover {
-    opacity: 0.9;
-}
 
-
-/* =========================
-   PÁGINA DO POST
-========================= */
+/* ========================================
+   POST COMPLETO
+======================================== */
 
 .hidden {
+
     display: none;
 }
 
+
 #postPage {
+
     max-width: 850px;
 
     margin: auto;
 }
 
+
 .back-button {
+
     border: none;
 
-    background: white;
+    background-color: white;
 
     padding: 10px 18px;
 
@@ -422,41 +451,45 @@ body {
     font-size: 14px;
 }
 
-.back-button:hover {
-    background: #eee;
-}
-
-
-/* POST COMPLETO */
 
 .full-post {
-    background: white;
 
-    border: 1px solid #ddd;
+    background-color: var(--card-color);
+
+    border: 1px solid var(--border-color);
 
     border-radius: 14px;
 
     overflow: hidden;
 }
 
+
 .full-post .post-image {
+
     height: 500px;
 }
 
 
-/* COMENTÁRIOS */
+/* ========================================
+   COMENTÁRIOS
+======================================== */
 
 .comments-section {
+
     padding: 20px;
 
-    border-top: 1px solid #eee;
+    border-top: 1px solid #eeeeee;
 }
 
+
 .comments-section h3 {
+
     margin-bottom: 20px;
 }
 
+
 .comment {
+
     display: flex;
 
     gap: 12px;
@@ -464,37 +497,29 @@ body {
     margin-bottom: 18px;
 }
 
+
 .comment-avatar {
+
     min-width: 38px;
+
     height: 38px;
 
     border-radius: 50%;
-
-    background: linear-gradient(
-        135deg,
-        #ff7a00,
-        #ff0069,
-        #833ab4
-    );
-
-    color: white;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    font-weight: bold;
 }
 
+
 .comment-content {
-    background: #f3f3f3;
+
+    background-color: #f3f3f3;
 
     padding: 10px 13px;
 
     border-radius: 10px;
 }
 
+
 .comment-content strong {
+
     display: block;
 
     font-size: 13px;
@@ -502,14 +527,19 @@ body {
     margin-bottom: 4px;
 }
 
+
 .comment-content p {
+
     font-size: 14px;
 }
 
 
-/* NOVO COMENTÁRIO */
+/* ========================================
+   FORMULÁRIO DE COMENTÁRIO
+======================================== */
 
 .comment-form {
+
     display: flex;
 
     gap: 10px;
@@ -517,19 +547,15 @@ body {
     margin-top: 25px;
 }
 
+
 .comment-form input {
+
     flex: 1;
-
-    padding: 12px;
-
-    border: 1px solid #ccc;
-
-    border-radius: 8px;
-
-    outline: none;
 }
 
+
 .comment-form button {
+
     border: none;
 
     padding: 0 20px;
@@ -540,27 +566,23 @@ body {
 
     cursor: pointer;
 
-    background: linear-gradient(
-        90deg,
-        #ff7a00,
-        #ff0069,
-        #833ab4
-    );
+    background: var(--primary-gradient);
 }
 
 
-/* =========================
-   PÁGINAS FUTURAS
-========================= */
+/* ========================================
+   PÁGINA EM DESENVOLVIMENTO
+======================================== */
 
 .empty-page {
+
     max-width: 600px;
 
     margin: 100px auto;
 
-    background: white;
+    background-color: var(--card-color);
 
-    border: 1px solid #ddd;
+    border: 1px solid var(--border-color);
 
     border-radius: 15px;
 
@@ -569,116 +591,123 @@ body {
     text-align: center;
 }
 
+
 .empty-icon {
+
     font-size: 50px;
 
     margin-bottom: 20px;
 }
 
+
 .empty-page p {
+
     margin: 10px 0 25px;
 
-    color: #777;
-}
-
-.primary-button {
-    border: none;
-
-    padding: 12px 25px;
-
-    border-radius: 8px;
-
-    color: white;
-
-    cursor: pointer;
-
-    background: linear-gradient(
-        90deg,
-        #ff7a00,
-        #ff0069,
-        #833ab4
-    );
+    color: var(--secondary-text);
 }
 
 
-/* =========================
+/* ========================================
    RESPONSIVIDADE
-========================= */
+======================================== */
 
 @media (max-width: 800px) {
 
     .sidebar {
+
         width: 75px;
 
         padding: 20px 10px;
     }
 
+
     .logo {
+
         font-size: 0;
 
         text-align: center;
     }
 
+
     .logo span {
+
         font-size: 32px;
     }
 
-    .user-profile div:last-child,
-    .menu-item:not(.active)::after {
+
+    .user-profile div:last-child {
+
         display: none;
     }
 
+
     .menu-item {
+
         justify-content: center;
 
         padding: 13px 5px;
     }
 
+
     .menu-item span {
+
         font-size: 23px;
     }
 
+
     .main-content {
+
         margin-left: 75px;
 
         padding: 25px 15px;
     }
 
+
     .post-image {
+
         height: 280px;
     }
 
+
     .full-post .post-image {
+
         height: 350px;
     }
+
 }
 
 
 @media (max-width: 500px) {
 
     .main-content {
+
         padding: 20px 10px;
     }
 
+
     .top-bar h1 {
+
         font-size: 23px;
     }
 
-    .post-card {
-        border-radius: 10px;
-    }
 
     .post-image {
+
         height: 230px;
     }
 
+
     .post-actions {
+
         flex-direction: column;
 
         gap: 5px;
     }
 
+
     .post-action {
+
         width: 100%;
     }
 
