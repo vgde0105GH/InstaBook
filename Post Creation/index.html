@@ -1,13 +1,76 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Criar Post</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    
+
+    <div class="container">
+
+        <div class="formulario">
+
+            <h1>Criar novo post</h1>
+            <p class="subtitulo">Compartilhe algo com outras pessoas</p>
+
+            <form>
+
+                <label for="titulo">Título</label>
+                <input
+                    type="text"
+                    id="titulo"
+                    name="titulo"
+                    placeholder="Digite o título do post"
+                    required
+                >
+
+                <label for="conteudo">Conteúdo</label>
+                <textarea
+                    id="conteudo"
+                    name="conteudo"
+                    placeholder="Escreva o conteúdo do seu post..."
+                    required
+                ></textarea>
+
+                <label for="imagem">Adicionar imagem</label>
+                <input
+                    type="file"
+                    id="imagem"
+                    name="imagem"
+                    accept="image/*"
+                >
+
+                <div class="botoes">
+
+                    <button type="submit" class="btn-enviar">
+                        Enviar post
+                    </button>
+
+                    <button type="reset" class="btn-cancelar">
+                        Cancelar
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
 </body>
 </html>
-//Deve ter um formulário para criar um post, com campos para o título, conteúdo e a opção de adicionar uma imagem.
-// Deve haver um botão para enviar o post e outro para cancelar a criação do post.
+
+
+
+
+
+
+
+<!-- //Deve ter um formulário para criar um post, com campos para o título, conteúdo e a opção de adicionar uma imagem.
+// Deve haver um botão para enviar o post e outro para cancelar a criação do post. -->
