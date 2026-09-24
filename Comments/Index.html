@@ -2,12 +2,22 @@
 <html lang="pt-BR">
 
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Comments</title>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-    <link rel="stylesheet" href="style.css">
+    <title>Comentários - InstaBook</title>
+
+    <!-- CSS GLOBAL -->
+    <link rel="stylesheet" href="../style.css">
+
+    <!-- CSS ESPECÍFICO -->
+    <link rel="stylesheet" href="./style.css">
+
 </head>
 
 <body>
@@ -15,28 +25,43 @@
     <div class="comments-container">
 
         <!-- CABEÇALHO -->
+
         <header class="comments-header">
 
-            <button class="voltar">
+            <button
+                class="voltar"
+                id="backButton"
+            >
                 ‹
             </button>
 
-            <h1>Comments</h1>
+            <h1>
+                Comentários
+            </h1>
 
-            <button class="enviar">
+            <button
+                class="enviar"
+                id="sendButton"
+            >
                 ➤
             </button>
 
         </header>
 
 
-        <!-- COMENTÁRIOS -->
+        <!-- LISTA DE COMENTÁRIOS -->
 
-        <div class="comments-list">
-
+        <div
+            class="comments-list"
+            id="commentsList"
+        >
 
             <!-- COMENTÁRIO 1 -->
-            <div class="comment">
+
+            <div
+                class="comment"
+                data-comment-id="1"
+            >
 
                 <div class="avatar avatar-roxo">
                     👩‍🦳
@@ -45,15 +70,34 @@
                 <div class="comment-content">
 
                     <div class="comment-text">
-                        <strong>john.doe</strong>
+
+                        <strong>
+                            john.doe
+                        </strong>
+
                         Lorem ipsum dolor sit, amet consectetur
                         adipiscing elit. Lorem ipsum dolor sit.
+
                     </div>
 
                     <div class="comment-info">
-                        <span>2d</span>
-                        <span>1 Like</span>
-                        <span>Reply</span>
+
+                        <span>
+                            22/09/2026 18:30
+                        </span>
+
+                        <button class="comment-action">
+                            Responder
+                        </button>
+
+                        <button class="comment-action edit-button">
+                            Editar
+                        </button>
+
+                        <button class="comment-action delete-button">
+                            Excluir
+                        </button>
+
                     </div>
 
                 </div>
@@ -66,7 +110,11 @@
 
 
             <!-- COMENTÁRIO 2 -->
-            <div class="comment">
+
+            <div
+                class="comment"
+                data-comment-id="2"
+            >
 
                 <div class="avatar avatar-azul">
                     👩
@@ -75,14 +123,33 @@
                 <div class="comment-content">
 
                     <div class="comment-text">
-                        <strong>random.person</strong>
+
+                        <strong>
+                            random.person
+                        </strong>
+
                         Hahahahahah
+
                     </div>
 
                     <div class="comment-info">
-                        <span>1d</span>
-                        <span>3 Likes</span>
-                        <span>Reply</span>
+
+                        <span>
+                            22/09/2026 17:45
+                        </span>
+
+                        <button class="comment-action">
+                            Responder
+                        </button>
+
+                        <button class="comment-action edit-button">
+                            Editar
+                        </button>
+
+                        <button class="comment-action delete-button">
+                            Excluir
+                        </button>
+
                     </div>
 
                 </div>
@@ -95,139 +162,46 @@
 
 
             <!-- COMENTÁRIO 3 -->
-            <div class="comment">
 
-                <div class="avatar avatar-azul">
-                    👩
+            <div
+                class="comment"
+                data-comment-id="3"
+            >
+
+                <div class="avatar avatar-vermelho">
+                    👨
                 </div>
 
                 <div class="comment-content">
 
                     <div class="comment-text">
-                        <strong>random.person</strong>
+
+                        <strong>
+                            deesan.tutorials
+                        </strong>
+
                         Hey folks!!!
+
                     </div>
 
                     <div class="comment-info">
-                        <span>23h</span>
-                        <span>25 Likes</span>
-                        <span>Reply</span>
-                    </div>
 
-                </div>
+                        <span>
+                            22/09/2026 16:20
+                        </span>
 
-                <button class="like">
-                    ♡
-                </button>
+                        <button class="comment-action">
+                            Responder
+                        </button>
 
-            </div>
+                        <button class="comment-action edit-button">
+                            Editar
+                        </button>
 
+                        <button class="comment-action delete-button">
+                            Excluir
+                        </button>
 
-            <!-- COMENTÁRIO 4 -->
-            <div class="comment">
-
-                <div class="avatar avatar-vermelho">
-                    👨
-                </div>
-
-                <div class="comment-content">
-
-                    <div class="comment-text">
-                        <strong>deesan.tutorials</strong>
-                        Hey!!!!
-                    </div>
-
-                    <div class="comment-info">
-                        <span>23h</span>
-                        <span>33 Likes</span>
-                        <span>Reply</span>
-                    </div>
-
-                </div>
-
-                <button class="like">
-                    ♡
-                </button>
-
-            </div>
-
-
-            <!-- COMENTÁRIO 5 -->
-            <div class="comment">
-
-                <div class="avatar avatar-vermelho">
-                    👨
-                </div>
-
-                <div class="comment-content">
-
-                    <div class="comment-text">
-                        <strong>deesan.tutorials</strong>
-                        Thanks for watching!!! Don't forget to subscribe...
-                    </div>
-
-                    <div class="comment-info">
-                        <span>3h</span>
-                        <span>75 Likes</span>
-                        <span>Reply</span>
-                    </div>
-
-                </div>
-
-                <button class="like">
-                    ♡
-                </button>
-
-            </div>
-
-
-            <!-- COMENTÁRIO 6 -->
-            <div class="comment">
-
-                <div class="avatar avatar-roxo">
-                    👩‍🦳
-                </div>
-
-                <div class="comment-content">
-
-                    <div class="comment-text">
-                        <strong>john.doe</strong>
-                        👍
-                    </div>
-
-                    <div class="comment-info">
-                        <span>2h</span>
-                        <span>50 Likes</span>
-                        <span>Reply</span>
-                    </div>
-
-                </div>
-
-                <button class="like">
-                    ♡
-                </button>
-
-            </div>
-
-
-            <!-- COMENTÁRIO 7 -->
-            <div class="comment">
-
-                <div class="avatar avatar-roxo">
-                    👩‍🦳
-                </div>
-
-                <div class="comment-content">
-
-                    <div class="comment-text">
-                        <strong>john.doe</strong>
-                        Sure!
-                    </div>
-
-                    <div class="comment-info">
-                        <span>2h</span>
-                        <span>50 Likes</span>
-                        <span>Reply</span>
                     </div>
 
                 </div>
@@ -240,10 +214,32 @@
 
         </div>
 
+
+        <!-- CAMPO DE NOVO COMENTÁRIO -->
+
+        <div class="new-comment">
+
+            <input
+                type="text"
+                id="commentInput"
+                class="input"
+                placeholder="Adicione um comentário..."
+            >
+
+            <button
+                class="primary-button"
+                id="addCommentButton"
+            >
+                Publicar
+            </button>
+
+        </div>
+
     </div>
 
-</body>
-</html>
 
-<!-- //aproximadamnete tr~es botões de comentarios, um para cada comentário, com a opção de editar e excluir.
-//deve aparecer o usuário que fez o comentário, a data e hora do comentário, e o conteúdo do comentário. -->
+    <script src="./script5.js"></script>
+
+</body>
+
+</html>
