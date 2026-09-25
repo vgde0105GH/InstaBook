@@ -1,178 +1,245 @@
 document.addEventListener("DOMContentLoaded", () => {
 
     const commentsList =
-        document.getElementById("commentsList");
+        document.getElementById(
+            "commentsList"
+        );
 
     const commentInput =
-        document.getElementById("commentInput");
+        document.getElementById(
+            "commentInput"
+        );
 
     const addCommentButton =
-        document.getElementById("addCommentButton");
+        document.getElementById(
+            "addCommentButton"
+        );
 
     const backButton =
-        document.getElementById("backButton");
+        document.getElementById(
+            "backButton"
+        );
 
     const sendButton =
-        document.getElementById("sendButton");
+        document.getElementById(
+            "sendButton"
+        );
 
 
     /* ========================================
        CURTIR COMENTÁRIO
     ======================================== */
 
-    const likeButtons =
-        document.querySelectorAll(".like");
+    function activateLike(button) {
 
-    likeButtons.forEach((button) => {
+        button.addEventListener(
+            "click",
+            () => {
 
-        button.addEventListener("click", () => {
-
-            if (button.classList.contains("liked")) {
-
-                button.classList.remove("liked");
-
-                button.innerText = "♡";
-
-            } else {
-
-                button.classList.add("liked");
-
-                button.innerText = "♥";
-
-            }
-
-        });
-
-    });
-
-
-    /* ========================================
-       EXCLUIR COMENTÁRIO
-    ======================================== */
-
-    function addDeleteEvent(button) {
-
-        button.addEventListener("click", () => {
-
-            const comment =
-                button.closest(".comment");
-
-            const confirmed =
-                confirm(
-                    "Deseja realmente excluir este comentário?"
-                );
-
-            if (!confirmed) {
-                return;
-            }
-
-            comment.remove();
-
-        });
-
-    }
-
-
-    const deleteButtons =
-        document.querySelectorAll(".delete-button");
-
-    deleteButtons.forEach((button) => {
-
-        addDeleteEvent(button);
-
-    });
-
-
-    /* ========================================
-       EDITAR COMENTÁRIO
-    ======================================== */
-
-    function addEditEvent(button) {
-
-        button.addEventListener("click", () => {
-
-            const comment =
-                button.closest(".comment");
-
-            const commentText =
-                comment.querySelector(".comment-text");
-
-            const currentContent =
-                commentText.innerText
-                    .replace(
-                        commentText.querySelector("strong").innerText,
-                        ""
+                if (
+                    button.classList.contains(
+                        "liked"
                     )
-                    .trim();
+                ) {
 
-            const newContent =
-                prompt(
-                    "Edite seu comentário:",
-                    currentContent
-                );
+                    button.classList.remove(
+                        "liked"
+                    );
 
-            if (
-                newContent === null ||
-                newContent.trim() === ""
-            ) {
-                return;
+                    button.innerText =
+                        "♡";
+
+                } else {
+
+                    button.classList.add(
+                        "liked"
+                    );
+
+                    button.innerText =
+                        "♥";
+
+                }
+
             }
-
-            const username =
-                commentText.querySelector("strong");
-
-            commentText.innerHTML = "";
-
-            commentText.appendChild(username);
-
-            commentText.append(
-                " " + newContent.trim()
-            );
-
-        });
+        );
 
     }
 
 
-    const editButtons =
-        document.querySelectorAll(".edit-button");
+    document
+        .querySelectorAll(".like")
+        .forEach(
+            activateLike
+        );
 
-    editButtons.forEach((button) => {
 
-        addEditEvent(button);
+    /* ========================================
+       EXCLUIR
+    ======================================== */
 
-    });
+    function activateDelete(button) {
+
+        button.addEventListener(
+            "click",
+            () => {
+
+                const comment =
+                    button.closest(
+                        ".comment"
+                    );
+
+
+                const confirmed =
+                    confirm(
+                        "Deseja realmente excluir este comentário?"
+                    );
+
+
+                if (!confirmed) {
+                    return;
+                }
+
+
+                comment.remove();
+
+            }
+        );
+
+    }
+
+
+    document
+        .querySelectorAll(
+            ".delete-button"
+        )
+        .forEach(
+            activateDelete
+        );
+
+
+    /* ========================================
+       EDITAR
+    ======================================== */
+
+    function activateEdit(button) {
+
+        button.addEventListener(
+            "click",
+            () => {
+
+                const comment =
+                    button.closest(
+                        ".comment"
+                    );
+
+
+                const commentText =
+                    comment.querySelector(
+                        ".comment-text"
+                    );
+
+
+                const username =
+                    commentText.querySelector(
+                        "strong"
+                    );
+
+
+                const currentText =
+                    commentText.innerText
+                        .replace(
+                            username.innerText,
+                            ""
+                        )
+                        .trim();
+
+
+                const newText =
+                    prompt(
+                        "Edite seu comentário:",
+                        currentText
+                    );
+
+
+                if (
+                    newText === null ||
+                    newText.trim() === ""
+                ) {
+
+                    return;
+
+                }
+
+
+                commentText.innerHTML = "";
+
+
+                commentText.appendChild(
+                    username
+                );
+
+
+                commentText.append(
+                    " " +
+                    newText.trim()
+                );
+
+            }
+        );
+
+    }
+
+
+    document
+        .querySelectorAll(
+            ".edit-button"
+        )
+        .forEach(
+            activateEdit
+        );
 
 
     /* ========================================
        RESPONDER
     ======================================== */
 
-    const replyButtons =
-        document.querySelectorAll(
-            ".comment-action:not(.edit-button):not(.delete-button)"
+    function activateReply(button) {
+
+        button.addEventListener(
+            "click",
+            () => {
+
+                const comment =
+                    button.closest(
+                        ".comment"
+                    );
+
+
+                const username =
+                    comment.querySelector(
+                        ".comment-text strong"
+                    ).innerText;
+
+
+                commentInput.value =
+                    `@${username} `;
+
+
+                commentInput.focus();
+
+            }
         );
 
-    replyButtons.forEach((button) => {
+    }
 
-        button.addEventListener("click", () => {
 
-            const comment =
-                button.closest(".comment");
-
-            const username =
-                comment.querySelector(
-                    ".comment-text strong"
-                ).innerText;
-
-            commentInput.value =
-                `@${username} `;
-
-            commentInput.focus();
-
-        });
-
-    });
+    document
+        .querySelectorAll(
+            ".comment-action:not(.edit-button):not(.delete-button)"
+        )
+        .forEach(
+            activateReply
+        );
 
 
     /* ========================================
@@ -184,22 +251,30 @@ document.addEventListener("DOMContentLoaded", () => {
         const content =
             commentInput.value.trim();
 
-        if (content === "") {
 
-            alert(
-                "Digite um comentário."
-            );
+        if (content === "") {
 
             commentInput.focus();
 
             return;
+
         }
 
 
-        const comment =
-            document.createElement("div");
+        const currentUser =
+            localStorage.getItem(
+                "userTag"
+            ) || "victor";
 
-        comment.className = "comment";
+
+        const comment =
+            document.createElement(
+                "div"
+            );
+
+
+        comment.className =
+            "comment";
 
 
         comment.innerHTML = `
@@ -213,7 +288,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 <div class="comment-text">
 
                     <strong>
-                        @victor
+                        @${currentUser}
                     </strong>
 
                     ${content}
@@ -249,84 +324,49 @@ document.addEventListener("DOMContentLoaded", () => {
         `;
 
 
-        commentsList.prepend(comment);
-
-
-        /* ========================================
-           ATIVAR BOTÃO CURTIR
-        ======================================== */
-
-        const likeButton =
-            comment.querySelector(".like");
-
-        likeButton.addEventListener(
-            "click",
-            () => {
-
-                if (
-                    likeButton.classList.contains("liked")
-                ) {
-
-                    likeButton.classList.remove(
-                        "liked"
-                    );
-
-                    likeButton.innerText = "♡";
-
-                } else {
-
-                    likeButton.classList.add(
-                        "liked"
-                    );
-
-                    likeButton.innerText = "♥";
-
-                }
-
-            }
+        commentsList.prepend(
+            comment
         );
 
 
-        /* ========================================
-           ATIVAR EDITAR
-        ======================================== */
+        /* Ativar funcionalidades */
 
-        addEditEvent(
-            comment.querySelector(".edit-button")
+        activateLike(
+            comment.querySelector(
+                ".like"
+            )
         );
 
 
-        /* ========================================
-           ATIVAR EXCLUIR
-        ======================================== */
-
-        addDeleteEvent(
-            comment.querySelector(".delete-button")
+        activateEdit(
+            comment.querySelector(
+                ".edit-button"
+            )
         );
 
 
-        /* ========================================
-           ATIVAR RESPONDER
-        ======================================== */
+        activateDelete(
+            comment.querySelector(
+                ".delete-button"
+            )
+        );
 
-        comment
-            .querySelector(
+
+        activateReply(
+            comment.querySelector(
                 ".comment-action:not(.edit-button):not(.delete-button)"
             )
-            .addEventListener("click", () => {
-
-                commentInput.value =
-                    "@victor ";
-
-                commentInput.focus();
-
-            });
+        );
 
 
         commentInput.value = "";
 
     }
 
+
+    /* ========================================
+       BOTÃO PUBLICAR
+    ======================================== */
 
     addCommentButton.addEventListener(
         "click",
@@ -335,14 +375,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* ========================================
-       ENTER PARA PUBLICAR
+       ENTER
     ======================================== */
 
     commentInput.addEventListener(
         "keydown",
         (event) => {
 
-            if (event.key === "Enter") {
+            if (
+                event.key === "Enter"
+            ) {
 
                 event.preventDefault();
 
@@ -355,7 +397,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* ========================================
-       BOTÃO ENVIAR DO CABEÇALHO
+       BOTÃO ENVIAR
     ======================================== */
 
     sendButton.addEventListener(

@@ -1,37 +1,188 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Liked Posts</title>
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Posts Curtidos - InstaBook</title>
+
+    <!-- CSS GLOBAL -->
+    <link rel="stylesheet" href="../style.css">
+
+    <!-- CSS ESPECÍFICO -->
     <link rel="stylesheet" href="./style.css">
+
 </head>
+
 <body>
-    <div class="card">
-        <div class="user-info">
-            <div class="profile">
-                <div class="profile-img">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-utXA8GSUFZmQDEkkyLjvhid-UO3nYEF7mhUSEObz6Q&s=10" class="cover" alt="">
-                </div>
-                <h3>Victor da Silva<br><span>Brasil, Santa Cruz do Sul</span></h3>
-            </div>
+
+    <main class="liked-container">
+
+        <!-- CABEÇALHO -->
+
+        <header class="liked-header">
+
+            <button
+                class="back-button"
+                id="backButton"
+            >
+                ←
+            </button>
+
             <div>
-                <div class="setting"></div>
+                <h1>
+                    Posts curtidos
+                </h1>
+
+                <p>
+                    Publicações que você curtiu
+                </p>
             </div>
-        </div>
-        <div class="img">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaHUYIRLNdJxAcah__5KrUs8_c6NvZ6vFSocx2rJajwg&s=10" class="cover" alt>
-        </div>
-        <div class="buttons">
-            <img class="icon" src="image/curtir.jpg">
-            <img class="icon" src="image/chat.jpg">
-            <img class="icon" src="image/enviar.jpg">
-        </div>
-        <h4 class="likes">5,111 likes</h4>
-        <h4 class="message"><b>Victor da Silva</b>
-            Olha só que beleza! <br>#amazing #statue</h4>
-    </div>
-    
+
+        </header>
+
+
+        <!-- LISTA DE POSTS -->
+
+        <section
+            class="liked-posts"
+            id="likedPosts"
+        >
+
+            <!-- POST 1 -->
+
+            <article class="liked-post">
+
+                <!-- USUÁRIO -->
+
+                <div class="user-info">
+
+                    <div class="profile">
+
+                        <div class="profile-img">
+                            V
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Victor da Silva
+                            </h3>
+
+                            <span>
+                                Santa Cruz do Sul, Brasil
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- IMAGEM -->
+
+                <div class="post-image">
+
+                    <img
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaHUYIRLNdJxAcah__5KrUs8_c6NvZ6vFSocx2rJajwg&s=10"
+                        alt="Publicação curtida"
+                    >
+
+                </div>
+
+
+                <!-- INFORMAÇÕES -->
+
+                <div class="post-content">
+
+                    <div class="post-stats">
+
+                        <strong>
+                            5.111 curtidas
+                        </strong>
+
+                    </div>
+
+                    <p class="post-description">
+
+                        <strong>
+                            Victor da Silva
+                        </strong>
+
+                        Olha só que beleza!
+
+                    </p>
+
+                    <p class="hashtags">
+                        #amazing #statue
+                    </p>
+
+                </div>
+
+
+                <!-- BOTÕES -->
+
+                <div class="post-buttons">
+
+                    <button
+                        class="post-button unlike-button"
+                    >
+                        ♥
+                        <span>
+                            Descurtir
+                        </span>
+                    </button>
+
+                    <button
+                        class="post-button view-button"
+                    >
+                        👁
+                        <span>
+                            Ver post
+                        </span>
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- CASO NÃO TENHA POSTS -->
+
+            <div
+                class="empty-message hidden"
+                id="emptyMessage"
+            >
+
+                <div class="empty-icon">
+                    ♡
+                </div>
+
+                <h2>
+                    Nenhum post curtido
+                </h2>
+
+                <p>
+                    Quando você curtir uma publicação,
+                    ela aparecerá aqui.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="./script.js"></script>
+
 </body>
+
 </html>
-<!-- //só deve aparecer os posts que o usuário curtiu e tres botões para voltar para a página inicial,desmarcar a curtida e um para visualizar o post completo. -->

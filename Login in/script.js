@@ -24,7 +24,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
         event.preventDefault();
 
-
         let validForm = true;
 
 
@@ -109,21 +108,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
         /* ========================================
-           SIMULAÇÃO DO LOGIN
+           LOGIN
         ======================================== */
 
         setTimeout(() => {
-
-
-            console.log(
-                "Lembrar-me:",
-                rememberCheckbox.checked
-            );
-
-
-            /* ========================================
-               LEMBRAR TAG
-            ======================================== */
 
             if (rememberCheckbox.checked) {
 
@@ -142,13 +130,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
             /* ========================================
-               LOGIN REALIZADO
+               SALVAR USUÁRIO ATUAL
             ======================================== */
 
-            alert(
-                `Login realizado com sucesso!\nTag: ${loginData.tag}`
+            localStorage.setItem(
+                "currentUser",
+                loginData.tag
             );
-
 
             /* ========================================
                IR PARA O FEED
@@ -157,9 +145,7 @@ document.addEventListener("DOMContentLoaded", () => {
             window.location.href =
                 "../Feed/index.html";
 
-
-        }, 1500);
-
+        }, 1000);
 
     });
 
@@ -173,14 +159,12 @@ document.addEventListener("DOMContentLoaded", () => {
             ".input-box input"
         );
 
-
     inputs.forEach((input) => {
 
         input.addEventListener("input", () => {
 
             const inputBox =
                 input.closest(".input-box");
-
 
             inputBox.style.borderColor =
                 "var(--input-border)";
@@ -198,7 +182,6 @@ document.addEventListener("DOMContentLoaded", () => {
         localStorage.getItem(
             "rememberedTag"
         );
-
 
     if (rememberedTag) {
 

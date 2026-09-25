@@ -1,10 +1,17 @@
-const postForm = document.querySelector("form");
+const postForm =
+    document.querySelector("form");
 
-const titleInput = document.getElementById("titulo");
+const titleInput =
+    document.getElementById("titulo");
 
-const contentInput = document.getElementById("conteudo");
+const contentInput =
+    document.getElementById("conteudo");
 
-const imageInput = document.getElementById("imagem");
+const imageInput =
+    document.getElementById("imagem");
+
+const cancelButton =
+    document.getElementById("cancelButton");
 
 
 /* ========================================
@@ -13,32 +20,31 @@ const imageInput = document.getElementById("imagem");
 
 imageInput.addEventListener("change", () => {
 
-    const imageFile = imageInput.files[0];
+    const imageFile =
+        imageInput.files[0];
 
 
     if (!imageFile) {
-
         return;
-
     }
 
 
     if (!imageFile.type.startsWith("image/")) {
 
-        alert("Selecione um arquivo de imagem.");
-
         imageInput.value = "";
 
         return;
-
     }
 
 
-    const imageUrl = URL.createObjectURL(imageFile);
+    const imageUrl =
+        URL.createObjectURL(imageFile);
 
 
     let imagePreview =
-        document.getElementById("imagePreview");
+        document.getElementById(
+            "imagePreview"
+        );
 
 
     if (!imagePreview) {
@@ -46,17 +52,24 @@ imageInput.addEventListener("change", () => {
         imagePreview =
             document.createElement("img");
 
-        imagePreview.id = "imagePreview";
+        imagePreview.id =
+            "imagePreview";
 
-        imagePreview.style.width = "100%";
+        imagePreview.style.width =
+            "100%";
 
-        imagePreview.style.maxHeight = "300px";
+        imagePreview.style.maxHeight =
+            "300px";
 
-        imagePreview.style.objectFit = "cover";
+        imagePreview.style.objectFit =
+            "cover";
 
-        imagePreview.style.borderRadius = "10px";
+        imagePreview.style.borderRadius =
+            "10px";
 
-        imagePreview.style.marginTop = "15px";
+        imagePreview.style.marginTop =
+            "15px";
+
 
         imageInput.parentElement.appendChild(
             imagePreview
@@ -65,7 +78,8 @@ imageInput.addEventListener("change", () => {
     }
 
 
-    imagePreview.src = imageUrl;
+    imagePreview.src =
+        imageUrl;
 
 });
 
@@ -74,75 +88,123 @@ imageInput.addEventListener("change", () => {
    ENVIAR POST
 ======================================== */
 
-postForm.addEventListener("submit", (event) => {
+postForm.addEventListener(
+    "submit",
+    (event) => {
 
-    event.preventDefault();
-
-
-    const title =
-        titleInput.value.trim();
+        event.preventDefault();
 
 
-    const content =
-        contentInput.value.trim();
+        const title =
+            titleInput.value.trim();
+
+        const content =
+            contentInput.value.trim();
+
+        const imageFile =
+            imageInput.files[0];
 
 
-    const imageFile =
-        imageInput.files[0];
+        /* ========================================
+           VALIDAR TÍTULO
+        ======================================== */
+
+        if (title === "") {
+
+            titleInput.focus();
+
+            return;
+
+        }
 
 
-    if (title === "") {
+        /* ========================================
+           VALIDAR CONTEÚDO
+        ======================================== */
 
-        alert("Digite um título para o post.");
+        if (content === "") {
 
-        titleInput.focus();
+            contentInput.focus();
 
-        return;
+            return;
+
+        }
+
+
+        /* ========================================
+           CRIAR POST
+        ======================================== */
+
+        const post = {
+
+            id:
+                Date.now(),
+
+            title:
+                title,
+
+            content:
+                content,
+
+            image:
+                imageFile
+                    ? imageFile.name
+                    : null,
+
+            author:
+                localStorage.getItem(
+                    "userTag"
+                ) || "victor",
+
+            likes:
+                0,
+
+            comments:
+                0
+
+        };
+
+
+        /* ========================================
+           SALVAR POST
+        ======================================== */
+
+        const savedPosts =
+            JSON.parse(
+                localStorage.getItem("posts")
+            ) || [];
+
+
+        savedPosts.push(post);
+
+
+        localStorage.setItem(
+            "posts",
+            JSON.stringify(savedPosts)
+        );
+
+
+        /* ========================================
+           VOLTAR PARA O FEED
+        ======================================== */
+
+        window.location.href =
+            "../Feed/index.html";
 
     }
+);
 
 
-    if (content === "") {
+/* ========================================
+   CANCELAR
+======================================== */
 
-        alert("Digite o conteúdo do post.");
+cancelButton.addEventListener(
+    "click",
+    () => {
 
-        contentInput.focus();
-
-        return;
-
-    }
-
-
-    const post = {
-
-        title: title,
-
-        content: content,
-
-        image: imageFile
-            ? imageFile.name
-            : null
-
-    };
-
-
-    console.log("Post criado:", post);
-
-
-    alert("Post criado com sucesso!");
-
-
-    postForm.reset();
-
-
-    const imagePreview =
-        document.getElementById("imagePreview");
-
-
-    if (imagePreview) {
-
-        imagePreview.remove();
+        window.location.href =
+            "../Feed/index.html";
 
     }
-
-});
+);

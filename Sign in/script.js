@@ -1,39 +1,57 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-    const form = document.getElementById("signForm");
+    const form =
+        document.getElementById("signForm");
 
     const inputs =
-        document.querySelectorAll(".input-box input");
+        document.querySelectorAll(
+            ".input-box input"
+        );
 
     const submitButton =
         document.querySelector(".btn");
 
 
     /* ========================================
-       ENVIO DO FORMULÁRIO
+       CRIAR CONTA
     ======================================== */
 
     form.addEventListener("submit", (event) => {
 
         event.preventDefault();
 
-
         let validForm = true;
 
+
+        /* ========================================
+           DADOS DO FORMULÁRIO
+        ======================================== */
 
         const formData = {
 
             email:
-                document.getElementById("email").value.trim(),
+                document
+                    .getElementById("email")
+                    .value
+                    .trim(),
 
             password:
-                document.getElementById("password").value.trim(),
+                document
+                    .getElementById("password")
+                    .value
+                    .trim(),
 
             tag:
-                document.getElementById("tag").value.trim(),
+                document
+                    .getElementById("tag")
+                    .value
+                    .trim(),
 
             name:
-                document.getElementById("name").value.trim()
+                document
+                    .getElementById("name")
+                    .value
+                    .trim()
 
         };
 
@@ -46,7 +64,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
             const inputBox =
                 input.closest(".input-box");
-
 
             if (input.value.trim() === "") {
 
@@ -89,15 +106,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
         /* ========================================
-           SIMULAÇÃO
+           CRIAR CONTA
         ======================================== */
 
         setTimeout(() => {
 
-            alert(
-                `Conta criada com sucesso, ${formData.name}!`
+            /* Salvar usuário */
+
+            localStorage.setItem(
+                "userName",
+                formData.name
             );
 
+            localStorage.setItem(
+                "userTag",
+                formData.tag
+            );
 
             console.log(
                 "Dados do usuário:",
@@ -105,18 +129,14 @@ document.addEventListener("DOMContentLoaded", () => {
             );
 
 
-            form.reset();
+            /* ========================================
+               IR PARA LOGIN
+            ======================================== */
 
+            window.location.href =
+                "../Login in/index.html";
 
-            submitButton.innerText =
-                "Criar Conta";
-
-            submitButton.disabled = false;
-
-            submitButton.style.opacity = "1";
-
-
-        }, 1500);
+        }, 1000);
 
     });
 
@@ -131,7 +151,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
             const inputBox =
                 input.closest(".input-box");
-
 
             inputBox.style.borderColor =
                 "var(--input-border)";

@@ -12,15 +12,23 @@
 
     <title>InstaBook - Feed</title>
 
-    <!-- CSS GLOBAL -->
-    <link rel="stylesheet" href="../style.css">
+    <link
+        rel="stylesheet"
+        href="../style.css"
+    >
 
-    <!-- CSS DO FEED -->
-    <link rel="stylesheet" href="./style.css">
+    <link
+        rel="stylesheet"
+        href="./style.css"
+    >
 
 </head>
 
 <body>
+
+    <!-- ========================================
+         MENU LATERAL
+    ======================================== -->
 
     <aside class="sidebar">
 
@@ -33,6 +41,8 @@
         </div>
 
 
+        <!-- USUÁRIO -->
+
         <div class="user-profile">
 
             <div class="profile-picture">
@@ -41,11 +51,11 @@
 
             <div>
 
-                <strong>
+                <strong id="profileName">
                     Victor Oliveira
                 </strong>
 
-                <span>
+                <span id="profileTag">
                     @victor
                 </span>
 
@@ -54,17 +64,16 @@
         </div>
 
 
+        <!-- MENU -->
+
         <nav class="sidebar-menu">
 
             <button
                 class="menu-item active"
                 data-page="feed"
             >
-
                 <span>⌂</span>
-
                 Feed
-
             </button>
 
 
@@ -72,11 +81,8 @@
                 class="menu-item"
                 data-page="create"
             >
-
                 <span>＋</span>
-
                 Criar publicação
-
             </button>
 
 
@@ -84,11 +90,8 @@
                 class="menu-item"
                 data-page="liked"
             >
-
                 <span>♥</span>
-
                 Posts curtidos
-
             </button>
 
 
@@ -96,15 +99,14 @@
                 class="menu-item"
                 data-page="profile"
             >
-
                 <span>●</span>
-
                 Meu perfil
-
             </button>
 
         </nav>
 
+
+        <!-- PARTE INFERIOR -->
 
         <div class="sidebar-bottom">
 
@@ -117,7 +119,10 @@
             </button>
 
 
-            <button class="menu-item">
+            <button
+                class="menu-item"
+                id="logoutButton"
+            >
 
                 <span>↪</span>
 
@@ -130,8 +135,14 @@
     </aside>
 
 
+    <!-- ========================================
+         CONTEÚDO
+    ======================================== -->
+
     <main class="main-content">
 
+
+        <!-- CABEÇALHO -->
 
         <header class="top-bar">
 
@@ -159,17 +170,24 @@
         </header>
 
 
+        <!-- ========================================
+             FEED
+        ======================================== -->
+
         <section
             id="feedPage"
             class="page"
         >
 
             <div id="postsContainer">
-
             </div>
 
         </section>
 
+
+        <!-- ========================================
+             POST COMPLETO
+        ======================================== -->
 
         <section
             id="postPage"
@@ -180,18 +198,19 @@
                 id="backButton"
                 class="back-button"
             >
-
                 ← Voltar para o feed
-
             </button>
 
 
             <div id="fullPostContainer">
-
             </div>
 
         </section>
 
+
+        <!-- ========================================
+             OUTRAS PÁGINAS
+        ======================================== -->
 
         <section
             id="otherPage"
@@ -216,9 +235,7 @@
                     id="returnFeedButton"
                     class="primary-button"
                 >
-
                     Voltar para o feed
-
                 </button>
 
             </div>
