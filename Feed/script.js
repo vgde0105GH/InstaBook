@@ -84,8 +84,8 @@ document.addEventListener("DOMContentLoaded", () => {
         "click",
         () => {
 
-            window.location.href =
-                "./index.html";
+           window.location.href = 
+            "../Post_Creation/index.html";
 
         }
     );
@@ -100,7 +100,7 @@ document.addEventListener("DOMContentLoaded", () => {
         () => {
 
             window.location.href =
-                "../Post Creation/index.html";
+                "../Post_Creation/index.html";
 
         }
     );
@@ -115,7 +115,7 @@ document.addEventListener("DOMContentLoaded", () => {
         () => {
 
             window.location.href =
-                "../Liked Posts/index.html";
+                "../Liked_Posts/index.html";
 
         }
     );
@@ -243,7 +243,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
                 window.location.href =
-                    "../Login in/index.html";
+                    "../Login_in/index.html";
 
             }
         );
